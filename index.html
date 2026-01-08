@@ -46,12 +46,436 @@
             overflow-x: hidden;
         }
 
+        /* HORIZONTAL MAINTENANCE POPUP STYLES */
+        .maintenance-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85); /* More visible background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .maintenance-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 900px; /* Wider for horizontal layout */
+            width: 95%;
+            box-shadow: 0 25px 75px rgba(0, 0, 0, 0.2),
+                        0 0 0 1px rgba(253, 126, 20, 0.15),
+                        0 15px 35px rgba(0, 0, 0, 0.15);
+            position: relative;
+            border: 1px solid rgba(253, 126, 20, 0.1);
+            animation: popupSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @keyframes popupSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Left Column - Icon and Title */
+        .popup-left {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            min-width: 200px;
+        }
+
+        /* Right Column - Content and Progress */
+        .popup-right {
+            flex: 2;
+            padding: 0.5rem;
+        }
+
+        /* X Close Button */
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(253, 126, 20, 0.1);
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--orange);
+            transition: var(--transition);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .popup-close:hover {
+            background-color: var(--orange);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .maintenance-icon {
+            font-size: 4rem;
+            color: var(--orange);
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.9;
+            }
+        }
+
+        .maintenance-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.2;
+        }
+
+        .maintenance-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            padding: 0 0.5rem;
+        }
+
+        /* Progress Bar - Horizontal */
+        .progress-container {
+            background: #f0f0f0;
+            border-radius: 50px;
+            height: 12px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--orange), #ff9f43, #ffcc80);
+            border-radius: 50px;
+            height: 100%;
+            width: 68%;
+            position: relative;
+            transition: width 1.5s ease-in-out;
+            box-shadow: 0 2px 8px rgba(253, 126, 20, 0.4);
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.5),
+                transparent
+            );
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .progress-percentage {
+            font-weight: 700;
+            color: var(--orange);
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .maintenance-message {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* 7-Day Countdown - Horizontal Layout */
+        .countdown-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-radius: 15px;
+            padding: 1.2rem;
+            border: 1px solid rgba(253, 126, 20, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin: 1.5rem 0;
+        }
+
+        .countdown-title {
+            color: #444;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .countdown-title i {
+            color: var(--orange);
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+            background: white;
+            padding: 0.8rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .countdown-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--orange);
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 2px 4px rgba(253, 126, 20, 0.1);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.3rem;
+            font-weight: 600;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .maintenance-btn {
+            flex: 1;
+            background: linear-gradient(135deg, var(--orange), #e65c00);
+            color: white;
+            border: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            box-shadow: 0 6px 20px rgba(253, 126, 20, 0.25),
+                        0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            min-width: 160px;
+        }
+
+        .maintenance-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(253, 126, 20, 0.35),
+                        0 6px 10px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, #ff8c00, #ff5500);
+        }
+
+        .maintenance-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: left 0.7s ease;
+        }
+
+        .maintenance-btn:hover::before {
+            left: 100%;
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: #666;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .secondary-btn:hover {
+            background: #f8f9fa;
+            color: var(--orange);
+            border-color: var(--orange);
+            transform: translateY(-3px);
+        }
+
+        /* HIDE MAINTENANCE POPUP */
+        .maintenance-popup.hidden {
+            display: none;
+        }
+
+        /* Blur effect on website content when popup is active */
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
+            transition: filter 0.5s ease;
+        }
+
+        .maintenance-popup:not(.hidden) ~ .container {
+            filter: blur(8px) brightness(0.95); /* More visible background */
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* Responsive adjustments for horizontal popup */
+        @media (max-width: 768px) {
+            .maintenance-content {
+                flex-direction: column;
+                padding: 1.5rem;
+                margin: 1rem;
+                max-width: 95%;
+                gap: 1.5rem;
+            }
+
+            .popup-left, .popup-right {
+                width: 100%;
+                padding: 0;
+            }
+
+            .maintenance-icon {
+                font-size: 3rem;
+            }
+
+            .maintenance-title {
+                font-size: 1.5rem;
+            }
+
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .maintenance-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .maintenance-content {
+                padding: 1.2rem;
+                margin: 0.5rem;
+            }
+
+            .maintenance-icon {
+                font-size: 2.5rem;
+            }
+
+            .maintenance-title {
+                font-size: 1.3rem;
+            }
+
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+
+            .countdown-item {
+                padding: 0.6rem;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+
+            .progress-bar {
+                height: 10px;
+            }
+
+            .maintenance-btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .countdown-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Background Animation */
@@ -87,6 +511,7 @@
             filter: grayscale(0);
         }
 
+        /* Rest of your existing styles remain exactly the same */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -2021,6 +2446,76 @@
     </style>
 </head>
 <body>
+    <!-- HORIZONTAL MAINTENANCE POPUP -->
+    <div class="maintenance-popup" id="maintenancePopup">
+        <div class="maintenance-content">
+            <!-- X Close Button -->
+            <button class="popup-close" id="popupClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Left Column -->
+            <div class="popup-left">
+                <div class="maintenance-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2 class="maintenance-title">Site Under Maintenance</h2>
+                <p class="maintenance-subtitle">We're working hard to bring you an improved experience</p>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="popup-right">
+                <div class="maintenance-message">
+                    Our website is currently undergoing scheduled maintenance to enhance performance and add exciting new features. We appreciate your patience and look forward to serving you better!
+                </div>
+                
+                <!-- Progress Bar at 68% -->
+                <div class="progress-info">
+                    <span class="progress-label">Completion Progress</span>
+                    <span class="progress-percentage" id="progressPercentage">68%</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                
+                <!-- 7-Day Countdown -->
+                <div class="countdown-container">
+                    <div class="countdown-title">
+                        <i class="far fa-clock"></i> Estimated Completion
+                    </div>
+                    <div class="countdown-grid" id="countdownGrid">
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="days">06</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="hours">18</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="minutes">45</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="seconds">30</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="maintenance-btn" id="maintenanceBtn">
+                        <i class="fas fa-external-link-alt"></i> Continue to Site
+                    </button>
+                    <button class="maintenance-btn secondary-btn" id="contactBtn">
+                        <i class="fas fa-envelope"></i> Contact Support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Background Animation -->
     <div class="background-animation" id="backgroundAnimation"></div>
 
@@ -2219,6 +2714,100 @@
     </div>
 
     <script>
+        // MAINTENANCE POPUP FUNCTIONALITY
+        const maintenancePopup = document.getElementById('maintenancePopup');
+        const maintenanceBtn = document.getElementById('maintenanceBtn');
+        const popupClose = document.getElementById('popupClose');
+        const contactBtn = document.getElementById('contactBtn');
+        const daysElement = document.getElementById('days');
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+        const progressBar = document.getElementById('progressBar');
+        const progressPercentage = document.getElementById('progressPercentage');
+
+        // Show maintenance popup on page load
+        window.addEventListener('load', () => {
+            // Check if user has already dismissed the popup
+            const hasDismissed = localStorage.getItem('maintenanceDismissed');
+            
+            if (!hasDismissed) {
+                maintenancePopup.classList.remove('hidden');
+                // More visible background (handled by CSS)
+                startCountdown();
+                
+                // Animate progress bar from 0% to 68%
+                setTimeout(() => {
+                    progressBar.style.width = '68%';
+                    progressBar.style.transition = 'width 1.5s ease-in-out';
+                }, 300);
+            }
+        });
+
+        // Countdown timer for maintenance - 7 days
+        function startCountdown() {
+            // Set maintenance end time (7 days from now)
+            const maintenanceEnd = new Date();
+            maintenanceEnd.setDate(maintenanceEnd.getDate() + 7);
+            maintenanceEnd.setHours(maintenanceEnd.getHours() + 18);
+            maintenanceEnd.setMinutes(maintenanceEnd.getMinutes() + 45);
+            maintenanceEnd.setSeconds(maintenanceEnd.getSeconds() + 30);
+            
+            function updateCountdown() {
+                const now = new Date();
+                const timeRemaining = maintenanceEnd - now;
+                
+                if (timeRemaining <= 0) {
+                    daysElement.textContent = '00';
+                    hoursElement.textContent = '00';
+                    minutesElement.textContent = '00';
+                    secondsElement.textContent = '00';
+                    clearInterval(countdownInterval);
+                    return;
+                }
+                
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                
+                daysElement.textContent = days.toString().padStart(2, '0');
+                hoursElement.textContent = hours.toString().padStart(2, '0');
+                minutesElement.textContent = minutes.toString().padStart(2, '0');
+                secondsElement.textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            // Update countdown every second
+            updateCountdown();
+            const countdownInterval = setInterval(updateCountdown, 1000);
+        }
+
+        // Function to dismiss maintenance popup
+        function dismissMaintenancePopup() {
+            maintenancePopup.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Remember that user dismissed the popup (for 24 hours)
+            localStorage.setItem('maintenanceDismissed', 'true');
+            
+            // Clear the dismissal after 24 hours
+            setTimeout(() => {
+                localStorage.removeItem('maintenanceDismissed');
+            }, 24 * 60 * 60 * 1000);
+        }
+
+        // Dismiss maintenance popup with X button
+        popupClose.addEventListener('click', dismissMaintenancePopup);
+
+        // Dismiss maintenance popup with Continue button
+        maintenanceBtn.addEventListener('click', dismissMaintenancePopup);
+
+        // Contact Support button
+        contactBtn.addEventListener('click', () => {
+            // Redirect to contact section or open email
+            window.location.href = 'mailto:vishnukthekkil@gmail.com';
+        });
+
         // Theme toggle functionality
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
