@@ -232,8 +232,32 @@
         <section class="projects" id="projects">
             <h2>Projects</h2>
             <div class="projects-grid" id="projectsGrid">
-                <!-- Project 1: Elon Musk Portfolio -->
+                <!-- Project 1: Lead College Website -->
                 <div class="project-card" data-id="1">
+                    <div class="project-media">
+                        <video controls autoplay loop muted playsinline>
+                            <source src="Videos/leadweb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Lead College Website</h3>
+                        <p class="project-brief">Official website for LEAD College (Autonomous), Palakkad, redesigned
+                            and developed using WordPress and PHP.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="project-btn demo" data-project="1"
+                                onclick="handleDemoClick(event, 'https://www.lead.ac.in')">
+                                <i class="fas fa-external-link-alt"></i> View Demo
+                            </a>
+                            <button class="project-btn details" onclick="showProjectDetails(1)">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Elon Musk Portfolio -->
+                <div class="project-card" data-id="2">
                     <div class="project-media">
                         <video controls autoplay loop muted playsinline>
                             <source src="Videos/elonmuskportvideo.mp4" type="video/mp4">
@@ -245,37 +269,11 @@
                         <p class="project-brief">My first HTML & CSS only project: A showcase portfolio website inspired
                             by Elon Musk.</p>
                         <div class="project-buttons">
-                            <a href="#" class="project-btn demo" data-project="1"
+                            <a href="#" class="project-btn demo" data-project="2"
                                 onclick="handleDemoClick(event, 'https://vishnucax.github.io/Elon-Musk-Portfolio/')">
                                 <i class="fas fa-external-link-alt"></i> View Demo
                             </a>
                             <a href="https://github.com/vishnucax/Elon-Musk-Portfolio" class="project-btn github"
-                                target="_blank">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <button class="project-btn details" onclick="showProjectDetails(1)">
-                                <i class="fas fa-info-circle"></i> Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Apple Website Clone -->
-                <div class="project-card" data-id="2">
-                    <div class="project-media">
-                        <img src="./Images/Projects/AppleClone.png"
-                            alt="Apple Website Clone" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-name">Apple Website Clone</h3>
-                        <p class="project-brief">A pixel-perfect clone of the Apple website featuring smooth animations
-                            and responsive design.</p>
-                        <div class="project-buttons">
-                            <a href="#" class="project-btn demo" data-project="2"
-                                onclick="handleDemoClick(event, 'https://vishnucax.github.io/apple-website-clone/')">
-                                <i class="fas fa-external-link-alt"></i> View Demo
-                            </a>
-                            <a href="https://github.com/vishnucax/apple-website-clone" class="project-btn github"
                                 target="_blank">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
@@ -285,10 +283,35 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Project 3: Apple Website Clone -->
+                <div class="project-card" data-id="3">
+                    <div class="project-media">
+                        <img src="./Images/Projects/AppleClone.png" alt="Apple Website Clone" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Apple Website Clone</h3>
+                        <p class="project-brief">A pixel-perfect clone of the Apple website featuring smooth animations
+                            and responsive design.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="project-btn demo" data-project="3"
+                                onclick="handleDemoClick(event, 'https://vishnucax.github.io/apple-website-clone/')">
+                                <i class="fas fa-external-link-alt"></i> View Demo
+                            </a>
+                            <a href="https://github.com/vishnucax/apple-website-clone" class="project-btn github"
+                                target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <button class="project-btn details" onclick="showProjectDetails(3)">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- View More Projects Button - Hidden since there is only 1 project -->
-            <div class="view-more-container" style="display: none;">
+            <!-- View More Projects Button -->
+            <div class="view-more-container">
                 <button class="btn btn-primary" id="viewMoreBtn" onclick="loadMoreProjects()">
                     <i class="fas fa-plus-circle"></i> View More Projects
                 </button>
@@ -505,7 +528,7 @@
                 <!-- Footer Bottom -->
                 <div class="footer-bottom">
                     <p class="copyright">© 2026 Vishnu K. All rights reserved.</p>
-                    
+
                 </div>
             </div>
         </div>

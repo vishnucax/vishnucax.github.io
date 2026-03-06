@@ -1,6 +1,17 @@
 // Project data
 const projectsData = {
     1: {
+        name: "Lead College Website",
+        image: null,
+        video: "Videos/leadweb.mp4",
+        brief: "Official website for LEAD College (Autonomous), Palakkad, redesigned and developed using WordPress and PHP.",
+        detailedBrief: "Full redesign and development of the official LEAD College website. Revamped the user interface and user experience with a modern theme, utilizing WordPress, PHP, Elementor, HTML, and CSS.",
+        team: ["Vishnu K (Fullstack Developer & UI/UX Designer)", "Nikhil AP (Fullstack Developer)", "Abhinand Vishwam (Fullstack Developer)", "Fathima Shan (Frontend & Content Writer)", "Gopika (Frontend & Content Writer)"],
+        techStack: ["WordPress", "PHP", "Elementor", "HTML5", "CSS3"],
+        demoUrl: "https://www.lead.ac.in",
+        githubUrl: null
+    },
+    2: {
         name: "Elon Musk Portfolio",
         image: null,
         video: "Videos/elonmuskportvideo.mp4",
@@ -11,7 +22,7 @@ const projectsData = {
         demoUrl: "https://vishnucax.github.io/Elon-Musk-Portfolio/",
         githubUrl: "https://github.com/vishnucax/Elon-Musk-Portfolio"
     },
-    2: {
+    3: {
         name: "Apple Website Clone",
         image: "./Images/Projects/AppleClone.png",
         video: null,
@@ -25,7 +36,20 @@ const projectsData = {
 };
 
 // Sample data for more projects
-const sampleProjects = [];
+const sampleProjects = [
+    {
+        id: 4,
+        name: "AI Physical Trainer",
+        image: "https://takeleap.com/assets/images/works/b3d05feaa0a97e9681a5d5adca209947.jpg",
+        video: null,
+        brief: "An AI/ML project that functions as a personal physical trainer evaluating your movements.",
+        detailedBrief: "This solo AI/ML project acts as a personal physical trainer. It utilizes machine learning models trained on Kaggle datasets to analyze user movements, track repetitions, and provide feedback.",
+        team: ["Vishnu K (Solo Project)"],
+        techStack: ["Python", "Machine Learning", "AI", "Kaggle Dataset"],
+        demoUrl: null,
+        githubUrl: "https://github.com/vishnucax/Ai-personal-physical-trainer"
+    }
+];
 
 // More projects data
 const moreProjects = [];
@@ -577,12 +601,12 @@ function showProjectDetails(projectId) {
             </div>
             
             <div class="popup-project-buttons">
-                <a href="#" class="popup-project-btn demo" onclick="handleDemoClick(event, '${project.demoUrl}')">
+                <a href="#" class="popup-project-btn demo" onclick="handleDemoClick(event, ${project.demoUrl ? `'${project.demoUrl}'` : 'null'})">
                     <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
-                <a href="${project.githubUrl}" class="popup-project-btn github" target="_blank">
+                ${project.githubUrl ? `<a href="${project.githubUrl}" class="popup-project-btn github" target="_blank">
                     <i class="fab fa-github"></i> View Source Code
-                </a>
+                </a>` : ''}
             </div>
         </div>
     `;
@@ -667,9 +691,9 @@ function addProjectCard(project) {
                 <a href="#" class="project-btn demo" data-project="${project.id}" onclick="handleDemoClick(event, '${project.demoUrl}')">
                     <i class="fas fa-external-link-alt"></i> View Demo
                 </a>
-                <a href="${project.githubUrl}" class="project-btn github" target="_blank">
+                ${project.githubUrl ? `<a href="${project.githubUrl}" class="project-btn github" target="_blank">
                     <i class="fab fa-github"></i> GitHub
-                </a>
+                </a>` : ''}
                 <button class="project-btn details" onclick="showProjectDetails(${project.id})">
                     <i class="fas fa-info-circle"></i> Details
                 </button>
@@ -685,8 +709,9 @@ function loadMoreProjects() {
     const projectsGrid = document.getElementById('projectsGrid');
     const viewMoreBtn = document.getElementById('viewMoreBtn');
 
-    // Calculate how many more projects to load
-    const nextBatch = allProjects.slice(loadedProjectCount, loadedProjectCount + projectsPerLoad);
+    // Calculate how many more projects to load (offset by 3 hardcoded projects)
+    const extraProjectsLoaded = loadedProjectCount - 3;
+    const nextBatch = allProjects.slice(extraProjectsLoaded, extraProjectsLoaded + projectsPerLoad);
 
     if (nextBatch.length === 0) {
         // No more projects to load
@@ -705,13 +730,13 @@ function loadMoreProjects() {
     });
 
     // Update button text if approaching the end
-    const remainingProjects = allProjects.length - loadedProjectCount;
+    const remainingProjects = allProjects.length - (loadedProjectCount - 3);
     if (remainingProjects <= projectsPerLoad) {
         viewMoreBtn.innerHTML = `<i class="fas fa-spinner"></i> Load Last ${remainingProjects} Projects`;
     }
 
     // Hide button if all projects are loaded
-    if (loadedProjectCount >= allProjects.length) {
+    if ((loadedProjectCount - 3) >= allProjects.length) {
         viewMoreBtn.innerHTML = '<i class="fas fa-check-circle"></i> All Projects Loaded';
         viewMoreBtn.disabled = true;
         viewMoreBtn.style.opacity = '0.7';
