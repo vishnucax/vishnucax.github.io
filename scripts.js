@@ -89,7 +89,7 @@ const achievementsData = [
         name: "National Seminar Paper Presentation",
         organization: "University of Calicut",
         date: "January 2026",
-        image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/University_of_Calicut_logo.png/220px-University_of_Calicut_logo.png",
+        image: "Images/seminar-calicut.jpeg",
         brief: "Presented a paper on 'AI Foresight Summit' at the National Seminar held at ITSR, University of Calicut.",
         details: "Presented a paper titled 'AI Foresight Summit: Shaping the Future through Predictive Analytics and Intelligence' at the National Seminar (ITSR, University of Calicut) held on 8th & 9th January 2026. A sincere thanks to University of Calicut for this opportunity.",
         certificateImage: "Images/seminar-calicut.jpeg",
