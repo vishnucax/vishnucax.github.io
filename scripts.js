@@ -3,7 +3,7 @@ const projectsData = {
     1: {
         name: "Lead College Website",
         image: null,
-        video: "Videos/leadweb.mp4",
+        video: "Videos/leadweb1.mp4",
         brief: "Official website for LEAD College (Autonomous), Palakkad, redesigned and developed using WordPress and PHP.",
         detailedBrief: "Full redesign and development of the official LEAD College website. Revamped the user interface and user experience with a modern theme, utilizing WordPress, PHP, Elementor, HTML, and CSS.",
         team: ["Vishnu K (Fullstack Developer & UI/UX Designer)", "Nikhil AP (Fullstack Developer)", "Abhinand Vishwam (Fullstack Developer)", "Fathima Shan (Frontend & Content Writer)", "Gopika (Frontend & Content Writer)"],
@@ -14,7 +14,7 @@ const projectsData = {
     2: {
         name: "Elon Musk Portfolio",
         image: null,
-        video: "Videos/elonmuskportvideo.mp4",
+        video: "Videos/elonmuskportvideo1.mp4",
         brief: "My first HTML & CSS only project: A showcase portfolio website inspired by Elon Musk.",
         detailedBrief: "This is my very first project built entirely using HTML and CSS. It works as a personal portfolio website dedicated to showcasing work and achievements, featuring a clean, responsive design inspired by Elon Musk, emphasizing structure and styling without relying on JavaScript frameworks.",
         team: ["Vishnu K (Lead Developer)"],
