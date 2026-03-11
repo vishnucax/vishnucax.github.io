@@ -6120,3 +6120,246 @@ body {
         width: 100%;
     }
 }
+
+/* ========================================
+   GitHub Stats Section
+   ======================================== */
+
+.github-section {
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+}
+
+.dark-mode .github-section {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.github-section h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+    transition: var(--transition);
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.github-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--orange);
+    border-radius: 2px;
+}
+
+.github-subtitle {
+    text-align: center;
+    margin-top: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--black);
+    opacity: 0.65;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.github-subtitle a {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.github-subtitle a:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+/* Stats Cards Grid */
+.github-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.github-stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(253, 126, 20, 0.18);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.github-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(253, 126, 20, 0.06), transparent);
+    transition: left 0.7s ease;
+    pointer-events: none;
+}
+
+.github-stat-card:hover::before {
+    left: 100%;
+}
+
+.github-stat-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(253, 126, 20, 0.3);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 6px 15px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .github-stat-card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(253, 126, 20, 0.15);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .github-stat-card:hover {
+    box-shadow:
+        0 12px 30px rgba(253, 126, 20, 0.2),
+        0 6px 16px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.github-stat-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Contribution Heatmap */
+.github-heatmap-wrapper {
+    margin-bottom: 2.5rem;
+}
+
+.github-sub-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.github-sub-heading i {
+    color: var(--orange);
+}
+
+.github-heatmap-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(253, 126, 20, 0.18);
+    padding: 1.5rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.github-heatmap-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(253, 126, 20, 0.06), transparent);
+    transition: left 0.7s ease;
+    pointer-events: none;
+}
+
+.github-heatmap-card:hover::before {
+    left: 100%;
+}
+
+.github-heatmap-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(253, 126, 20, 0.3);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 6px 15px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .github-heatmap-card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(253, 126, 20, 0.15);
+}
+
+.github-heatmap-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    filter: saturate(1.2);
+}
+
+/* Profile Button */
+.github-profile-btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .github-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .github-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .github-section {
+        padding: 2rem 1rem;
+    }
+}

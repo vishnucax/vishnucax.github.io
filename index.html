@@ -33,6 +33,7 @@
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#github">GitHub</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
@@ -61,6 +62,7 @@
                 <li><a href="#achievements" class="menu-item">Achievements</a></li>
                 <li><a href="#publications" class="menu-item">Publications</a></li>
                 <li><a href="#certificates" class="menu-item">Certificates</a></li>
+                <li><a href="#github" class="menu-item">GitHub</a></li>
                 <li><a href="#contact" class="menu-item">Contact</a></li>
             </div>
 
@@ -256,25 +258,23 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Elon Musk Portfolio -->
+                <!-- Project 2: AI Physical Trainer -->
                 <div class="project-card" data-id="2">
                     <div class="project-media">
-                        <video controls autoplay loop muted playsinline>
-                            <source src="Videos/elonmuskportvideo1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <img src="https://takeleap.com/assets/images/works/b3d05feaa0a97e9681a5d5adca209947.jpg"
+                            alt="AI Physical Trainer" loading="lazy">
                     </div>
                     <div class="project-info">
-                        <h3 class="project-name">Elon Musk Portfolio</h3>
-                        <p class="project-brief">My first HTML & CSS only project: A showcase portfolio website inspired
-                            by Elon Musk.</p>
+                        <h3 class="project-name">AI Physical Trainer</h3>
+                        <p class="project-brief">An AI/ML project that functions as a personal physical trainer
+                            evaluating your movements.</p>
                         <div class="project-buttons">
                             <a href="#" class="project-btn demo" data-project="2"
-                                onclick="handleDemoClick(event, 'https://vishnucax.github.io/Elon-Musk-Portfolio/')">
+                                onclick="handleDemoClick(event, 'null')">
                                 <i class="fas fa-external-link-alt"></i> View Demo
                             </a>
-                            <a href="https://github.com/vishnucax/Elon-Musk-Portfolio" class="project-btn github"
-                                target="_blank">
+                            <a href="https://github.com/vishnucax/Ai-personal-physical-trainer"
+                                class="project-btn github" target="_blank">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                             <button class="project-btn details" onclick="showProjectDetails(2)">
@@ -284,22 +284,23 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Apple Website Clone -->
+                <!-- Project 3: Researcher Portfolio -->
                 <div class="project-card" data-id="3">
                     <div class="project-media">
-                        <img src="./Images/Projects/AppleClone.png" alt="Apple Website Clone" loading="lazy">
+                        <img src="https://opengraph.githubassets.com/1/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io"
+                            alt="Researcher Portfolio" loading="lazy">
                     </div>
                     <div class="project-info">
-                        <h3 class="project-name">Apple Website Clone</h3>
-                        <p class="project-brief">A pixel-perfect clone of the Apple website featuring smooth animations
-                            and responsive design.</p>
+                        <h3 class="project-name">Researcher Portfolio</h3>
+                        <p class="project-brief">Full design, development, and deployment of a professional portfolio
+                            website for a researcher.</p>
                         <div class="project-buttons">
                             <a href="#" class="project-btn demo" data-project="3"
-                                onclick="handleDemoClick(event, 'https://vishnucax.github.io/apple-website-clone/')">
+                                onclick="handleDemoClick(event, 'https://satyendra-kushwaha.github.io/')">
                                 <i class="fas fa-external-link-alt"></i> View Demo
                             </a>
-                            <a href="https://github.com/vishnucax/apple-website-clone" class="project-btn github"
-                                target="_blank">
+                            <a href="https://github.com/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io"
+                                class="project-btn github" target="_blank">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                             <button class="project-btn details" onclick="showProjectDetails(3)">
@@ -360,6 +361,45 @@
                 <button class="btn btn-primary" id="viewMoreCertificatesBtn" onclick="loadMoreCertificates()">
                     <i class="fas fa-plus-circle"></i> View More Certificates
                 </button>
+            </div>
+        </section>
+
+        <!-- GitHub Stats Section -->
+        <section class="github-section" id="github">
+            <h2>GitHub Activity</h2>
+            <p class="github-subtitle">Real-time stats from <a href="https://github.com/vishnucax"
+                    target="_blank">@vishnucax</a></p>
+
+            <!-- Stat Cards Row -->
+            <div class="github-stats-grid">
+                <div class="github-stat-card">
+                    <img src="https://github-readme-stats.vercel.app/api?username=vishnucax&show_icons=true&count_private=true&theme=transparent&title_color=fd7e14&icon_color=fd7e14&text_color=888888&border_color=fd7e1430&bg_color=00000000&hide_border=false"
+                        alt="GitHub Stats" loading="lazy">
+                </div>
+                <div class="github-stat-card">
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=vishnucax&theme=transparent&hide_border=false&border=fd7e1430&ring=fd7e14&fire=ff5500&currStreakLabel=fd7e14&sideLabels=888888&dates=888888&currStreakNum=fd7e14&sideNums=fd7e14&background=00000000"
+                        alt="GitHub Streak" loading="lazy">
+                </div>
+                <div class="github-stat-card">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vishnucax&layout=compact&theme=transparent&title_color=fd7e14&text_color=888888&border_color=fd7e1430&bg_color=00000000&langs_count=8"
+                        alt="Top Languages" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Contribution Heatmap -->
+            <div class="github-heatmap-wrapper">
+                <h3 class="github-sub-heading"><i class="fas fa-fire"></i> Contribution Graph</h3>
+                <div class="github-heatmap-card">
+                    <img src="https://ghchart.rshah.org/fd7e14/vishnucax" alt="GitHub Contribution Heatmap"
+                        loading="lazy">
+                </div>
+            </div>
+
+            <!-- Profile Button -->
+            <div class="github-profile-btn-wrap">
+                <a href="https://github.com/vishnucax" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View Full GitHub Profile
+                </a>
             </div>
         </section>
 
@@ -511,7 +551,7 @@
                             <div class="footer-contact-item">
                                 <i class="fas fa-envelope"></i>
                                 <a href="mailto:vishnukookkal@gmail.com">vishnukookkal@gmail.com</a>
-                                
+
                             </div>
                             <div class="footer-contact-item">
                                 <i class="fas fa-phone-alt"></i>
@@ -568,6 +608,19 @@
             <p class="popup-message">Sorry, the live demo is not currently available for this project. Please check the
                 GitHub repository for source code and documentation.</p>
             <button class="popup-close" onclick="closeDemoPopup()">OK, I Understand</button>
+        </div>
+    </div>
+
+    <!-- NEW: Popup Modal for No Verification Available -->
+    <div class="popup-overlay" id="verifyPopup">
+        <div class="popup-modal">
+            <div class="popup-icon">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <h3 class="popup-title">Verification Unavailable</h3>
+            <p class="popup-message">Sorry, the verification credential link is not available for this certificate.
+                It was issued directly by <strong>Srishti Campus</strong>.</p>
+            <button class="popup-close" onclick="closeVerifyPopup()">OK, I Understand</button>
         </div>
     </div>
 

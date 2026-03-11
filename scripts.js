@@ -12,33 +12,6 @@ const projectsData = {
         githubUrl: null
     },
     2: {
-        name: "Elon Musk Portfolio",
-        image: null,
-        video: "Videos/elonmuskportvideo1.mp4",
-        brief: "My first HTML & CSS only project: A showcase portfolio website inspired by Elon Musk.",
-        detailedBrief: "This is my very first project built entirely using HTML and CSS. It works as a personal portfolio website dedicated to showcasing work and achievements, featuring a clean, responsive design inspired by Elon Musk, emphasizing structure and styling without relying on JavaScript frameworks.",
-        team: ["Vishnu K (Lead Developer)"],
-        techStack: ["HTML5", "CSS3"],
-        demoUrl: "https://vishnucax.github.io/Elon-Musk-Portfolio/",
-        githubUrl: "https://github.com/vishnucax/Elon-Musk-Portfolio"
-    },
-    3: {
-        name: "Apple Website Clone",
-        image: "./Images/Projects/AppleClone.png",
-        video: null,
-        brief: "A pixel-perfect clone of the Apple website featuring smooth animations and responsive design.",
-        detailedBrief: "Developed in Feb 2025. This project demonstrates high-fidelity replication of complex UI/UX elements found on the official Apple website, including navigation menus, product showcases, and responsive layouts. Key features include smooth scroll animations, interactive product displays, and a mobile-first approach.",
-        team: ["Vishnu K (Solo Project)"],
-        techStack: ["HTML5", "CSS3", "JavaScript"],
-        demoUrl: "https://vishnucax.github.io/apple-website-clone/",
-        githubUrl: "https://github.com/vishnucax/apple-website-clone"
-    }
-};
-
-// Sample data for more projects
-const sampleProjects = [
-    {
-        id: 4,
         name: "AI Physical Trainer",
         image: "https://takeleap.com/assets/images/works/b3d05feaa0a97e9681a5d5adca209947.jpg",
         video: null,
@@ -48,11 +21,87 @@ const sampleProjects = [
         techStack: ["Python", "Machine Learning", "AI", "Kaggle Dataset"],
         demoUrl: null,
         githubUrl: "https://github.com/vishnucax/Ai-personal-physical-trainer"
+    },
+    3: {
+        name: "Researcher Portfolio",
+        image: "https://opengraph.githubassets.com/1/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io",
+        video: null,
+        brief: "Full design, development, and deployment of a professional portfolio website for a researcher.",
+        detailedBrief: "A high-performance personal portfolio website designed for a researcher. The project involved full-stack development, custom UI/UX design, and deployment on GitHub Pages. It features sections for publications, research interests, and professional milestones.",
+        team: ["Vishnu K (Developer & Designer)"],
+        techStack: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+        demoUrl: "https://satyendra-kushwaha.github.io/",
+        githubUrl: "https://github.com/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io"
+    }
+};
+
+// Sample data for more projects
+const sampleProjects = [
+    {
+        id: 4,
+        name: "Future Predictor",
+        image: null,
+        video: "Videos/Future-Predictor.mp4",
+        brief: "A fun and interactive web application that predicts the future.",
+        detailedBrief: "Future Predictor is a web-based project that offers users entertaining predictions about their future. It features a hacker-themed UI and interactive elements.",
+        team: ["Vishnu K"],
+        techStack: ["HTML", "CSS", "JavaScript"],
+        demoUrl: "https://vishnucax.github.io/future-predictor/",
+        githubUrl: "https://github.com/vishnucax/future-predictor"
     }
 ];
 
 // More projects data
-const moreProjects = [];
+const moreProjects = [
+    {
+        id: 5,
+        name: "ESP32 Cybersecurity Captive Portal",
+        image: "https://opengraph.githubassets.com/1/vishnucax/ESP32-Cybersecurity-Awareness-Captive-Portal",
+        video: null,
+        brief: "An ESP32-based captive portal designed for cybersecurity awareness and education.",
+        detailedBrief: "This project demonstrates how captive portals work and serves as an educational tool for cybersecurity awareness. It is built using an ESP32 microcontroller and demonstrates network-level interactions.",
+        team: ["Vishnu K"],
+        techStack: ["ESP32", "C++", "Cybersecurity", "Networking"],
+        demoUrl: null,
+        githubUrl: "https://github.com/vishnucax/ESP32-Cybersecurity-Awareness-Captive-Portal"
+    },
+    {
+        id: 6,
+        name: "TF-IDF Movie Recommender",
+        image: null,
+        video: "Videos/Movie-Recomentation.mp4",
+        brief: "A movie recommendation system utilizing TF-IDF analysis on Kaggle datasets.",
+        detailedBrief: "This solo project is a content-based recommendation system that suggests similar movies to users. It uses Term Frequency-Inverse Document Frequency (TF-IDF) analysis to find similarities between movie descriptions and metadata.",
+        team: ["Vishnu K (Solo Project)"],
+        techStack: ["Python", "Machine Learning", "TF-IDF", "Kaggle Dataset"],
+        demoUrl: null,
+        githubUrl: "https://github.com/vishnucax/TF-IDF-analysis-based-similar-movie-suggesting-system"
+    },
+    {
+        id: 7,
+        name: "Apple Website Clone",
+        image: "./Images/Projects/AppleClone.png",
+        video: null,
+        brief: "A pixel-perfect clone of the Apple website featuring smooth animations and responsive design.",
+        detailedBrief: "Developed in Feb 2025. This project demonstrates high-fidelity replication of complex UI/UX elements found on the official Apple website, including navigation menus, product showcases, and responsive layouts. Key features include smooth scroll animations, interactive product displays, and a mobile-first approach.",
+        team: ["Vishnu K (Solo Project)"],
+        techStack: ["HTML5", "CSS3", "JavaScript"],
+        demoUrl: "https://vishnucax.github.io/apple-website-clone/",
+        githubUrl: "https://github.com/vishnucax/apple-website-clone"
+    },
+    {
+        id: 8,
+        name: "Elon Musk Portfolio",
+        image: null,
+        video: "Videos/elonmuskportvideo1.mp4",
+        brief: "My first HTML & CSS only project: A showcase portfolio website inspired by Elon Musk.",
+        detailedBrief: "This is my very first project built entirely using HTML and CSS. It works as a personal portfolio website dedicated to showcasing work and achievements, featuring a clean, responsive design inspired by Elon Musk, emphasizing structure and styling without relying on JavaScript frameworks.",
+        team: ["Vishnu K (Lead Developer)"],
+        techStack: ["HTML5", "CSS3"],
+        demoUrl: "https://vishnucax.github.io/Elon-Musk-Portfolio/",
+        githubUrl: "https://github.com/vishnucax/Elon-Musk-Portfolio"
+    }
+];
 
 // NEW: Achievements Data
 const achievementsData = [
@@ -133,6 +182,30 @@ const morePublications = [];
 const certificatesData = [
     {
         id: 1,
+        name: "React Development",
+        issuer: "Srishti Campus",
+        date: "2024",
+        logo: "https://media.licdn.com/dms/image/v2/C4D0BAQFDTBJLTTnchg/company-logo_200_200/company-logo_200_200/0/1631373808913?e=2147483647&v=beta&t=7i1pu8cJwCI3KaTZbRilNfJNlkg7dcuritoJnzkFCyc",
+        image: "./Images/Certs/srishti-react.jpeg",
+        description: "Advanced certification in React.js, focusing on component-based architecture, state management, and modern frontend practices.",
+        skills: ["React.js", "Frontend Development", "JavaScript", "UI/UX"],
+        credentialUrl: null,
+        downloadUrl: "./Images/Certs/srishti-react.jpeg"
+    },
+    {
+        id: 2,
+        name: "Flutter App Development",
+        issuer: "Srishti Campus",
+        date: "2024",
+        logo: "https://media.licdn.com/dms/image/v2/C4D0BAQFDTBJLTTnchg/company-logo_200_200/company-logo_200_200/0/1631373808913?e=2147483647&v=beta&t=7i1pu8cJwCI3KaTZbRilNfJNlkg7dcuritoJnzkFCyc",
+        image: "./Images/Certs/srishti-flutter.jpeg",
+        description: "Comprehensive certification in Flutter and Dart for cross-platform mobile application development.",
+        skills: ["Flutter", "Dart", "Mobile App Development", "Cross-Platform"],
+        credentialUrl: null,
+        downloadUrl: "./Images/Certs/srishti-flutter.jpeg"
+    },
+    {
+        id: 3,
         name: "Foundations: Data, Data, Everywhere",
         issuer: "Google (Coursera)",
         date: "October 6, 2025",
@@ -141,10 +214,10 @@ const certificatesData = [
         description: "Foundational course in data analytics covering data structure, rigorous analysis, and visualization.",
         skills: ["Data Analysis", "Spreadsheets", "SQL", "Data Visualization"],
         credentialUrl: "https://www.coursera.org/account/accomplishments/verify/MUFJNLZFUHVM",
-        downloadUrl: null
+        downloadUrl: "./Images/Certs/GoogleData.png"
     },
     {
-        id: 2,
+        id: 4,
         name: "Build a Computer Vision App with Azure",
         issuer: "Microsoft (Coursera)",
         date: "November 5, 2025",
@@ -153,10 +226,14 @@ const certificatesData = [
         description: "Project-based course on building computer vision applications using Azure Cognitive Services.",
         skills: ["Computer Vision", "Azure", "AI", "Cloud Computing"],
         credentialUrl: "https://www.coursera.org/account/accomplishments/verify/LK1A8EYW90C9",
-        downloadUrl: null
-    },
+        downloadUrl: "./Images/Certs/AzureService1.png"
+    }
+];
+
+// More certificates data
+const moreCertificates = [
     {
-        id: 3,
+        id: 5,
         name: "Build a Full Website using WordPress",
         issuer: "Coursera",
         date: "November 4, 2025",
@@ -165,10 +242,10 @@ const certificatesData = [
         description: "Practical course on designing and building fully functional websites using WordPress.",
         skills: ["WordPress", "Web Design", "CMS", "Content Management"],
         credentialUrl: "https://www.coursera.org/account/accomplishments/verify/9TEFQ0IRJ9W5",
-        downloadUrl: null
+        downloadUrl: "./Images/Certs/WordpressFull.png"
     },
     {
-        id: 4,
+        id: 6,
         name: "Build a Free Website with WordPress",
         issuer: "Coursera",
         date: "November 4, 2025",
@@ -177,47 +254,43 @@ const certificatesData = [
         description: "Hands-on guide to creating and publishing a free website using the WordPress platform.",
         skills: ["WordPress", "Web Development", "Blogging", "Digital Presence"],
         credentialUrl: "https://www.coursera.org/account/accomplishments/verify/DBFL2771ZQ0M",
-        downloadUrl: null
-    }
-];
-
-// More certificates data
-const moreCertificates = [
+        downloadUrl: "./Images/Certs/WordpressFree.png"
+    },
     {
-        id: 5,
+        id: 7,
         name: "AI For All - Awareness Badge",
         issuer: "Government of India & Intel",
         date: "2025",
         logo: "https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg",
-        image: "./Images/Certs/AiforAll.png",
+        image: "./Images/Certs/aiforall-intel.png",
         description: "National program to demystify AI and its applications for the general public.",
         skills: ["Artificial Intelligence", "Digital Literacy", "Future Tech"],
         credentialUrl: "https://ai-for-all.in/#/badge?id=U2FsdGVkX19GcWMeF1GXpIsKtC4l4B81awNBCJFWyCke1Q2u3A4l",
-        downloadUrl: null
+        downloadUrl: "./Images/Certs/aiforall-intel.png"
     },
     {
-        id: 6,
+        id: 8,
         name: "HTML and CSS",
         issuer: "Ethnotech Academy",
         date: "October 2023",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        image: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        image: "./Images/Certs/ethnotech-html.png",
         description: "Comprehensive training in web markup and styling languages. Credential ID: ETHSU01319",
         skills: ["HTML5", "CSS3", "Web Design", "Responsive Layouts"],
         credentialUrl: null, // No public URL provided
-        downloadUrl: null
+        downloadUrl: "./Images/Certs/ethnotech-html.png"
     },
     {
-        id: 7,
+        id: 9,
         name: "Software Foundation Course - C++",
         issuer: "Ethnotech Academy",
         date: "January 2023",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-        image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        image: "./Images/Certs/ethnotechcpp.png",
         description: "Foundation course covering object-oriented programming with C++. Credential ID: ETHSU00432",
         skills: ["C++", "OOP", "Programming", "Software Development"],
         credentialUrl: null,
-        downloadUrl: null
+        downloadUrl: "./Images/Certs/ethnotechcpp.png"
     }
 ];
 
@@ -634,7 +707,7 @@ document.getElementById('projectDetailsPopup').addEventListener('click', functio
 function handleDemoClick(event, demoUrl) {
     event.preventDefault();
 
-    if (demoUrl) {
+    if (demoUrl && demoUrl !== 'null' && demoUrl !== 'undefined') {
         // Open demo in new tab
         window.open(demoUrl, '_blank');
     } else {
@@ -667,6 +740,7 @@ document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         closeProjectDetails();
         closeDemoPopup();
+        closeVerifyPopup();
         closeCertificateModal();
         closeAchievementDetails();
     }
@@ -682,7 +756,9 @@ function addProjectCard(project) {
 
     projectCard.innerHTML = `
         <div class="project-media">
-            <img src="${project.image}" alt="${project.name}" loading="lazy">
+            ${project.video
+            ? `<video controls autoplay loop muted playsinline><source src="${project.video}" type="video/mp4">Your browser does not support the video tag.</video>`
+            : `<img src="${project.image}" alt="${project.name}" loading="lazy">`}
         </div>
         <div class="project-info">
             <h3 class="project-name">${project.name}</h3>
@@ -1267,7 +1343,7 @@ function viewCertificate(certificateId) {
             </div>
             
             <div class="certificate-modal-actions">
-                <a href="${certificate.credentialUrl}" class="certificate-modal-btn view" target="_blank">
+                <a href="#" class="certificate-modal-btn view" onclick="handleVerifyClick(event, ${certificate.credentialUrl ? `'${certificate.credentialUrl}'` : 'null'})">
                     <i class="fas fa-external-link-alt"></i> Verify Credential
                 </a>
                 <a href="${certificate.downloadUrl}" class="certificate-modal-btn download" download>
@@ -1293,6 +1369,30 @@ function closeCertificateModal() {
 document.getElementById('certificateModal').addEventListener('click', function (e) {
     if (e.target === this) {
         closeCertificateModal();
+    }
+});
+
+// NEW: Handle certificate verification click
+function handleVerifyClick(event, credentialUrl) {
+    event.preventDefault();
+    if (credentialUrl && credentialUrl !== 'null') {
+        window.open(credentialUrl, '_blank');
+    } else {
+        const popup = document.getElementById('verifyPopup');
+        popup.classList.add('active');
+    }
+}
+
+// NEW: Close verification popup
+function closeVerifyPopup() {
+    const popup = document.getElementById('verifyPopup');
+    popup.classList.remove('active');
+}
+
+// NEW: Close popup when clicking outside
+document.getElementById('verifyPopup').addEventListener('click', function (e) {
+    if (e.target === this) {
+        closeVerifyPopup();
     }
 });
 
