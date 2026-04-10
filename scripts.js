@@ -24,14 +24,14 @@ const projectsData = {
     },
     3: {
         name: "Researcher Portfolio",
-        image: "https://opengraph.githubassets.com/1/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io",
+        image: "https://opengraph.githubassets.com/1/Satyendra-K/Satyendra-K.github.io",
         video: null,
         brief: "Full design, development, and deployment of a professional portfolio website for a researcher.",
         detailedBrief: "A high-performance personal portfolio website designed for a researcher. The project involved full-stack development, custom UI/UX design, and deployment on GitHub Pages. It features sections for publications, research interests, and professional milestones.",
         team: ["Vishnu K (Developer & Designer)"],
         techStack: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
-        demoUrl: "https://satyendra-kushwaha.github.io/",
-        githubUrl: "https://github.com/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io"
+        demoUrl: "https://satyendra-k.github.io/",
+        githubUrl: "https://github.com/Satyendra-K/Satyendra-K.github.io"
     }
 };
 
