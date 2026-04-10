@@ -12,15 +12,15 @@ const projectsData = {
         githubUrl: null
     },
     2: {
-        name: "AI Physical Trainer",
-        image: "https://takeleap.com/assets/images/works/b3d05feaa0a97e9681a5d5adca209947.jpg",
-        video: null,
-        brief: "An AI/ML project that functions as a personal physical trainer evaluating your movements.",
-        detailedBrief: "This solo AI/ML project acts as a personal physical trainer. It utilizes machine learning models trained on Kaggle datasets to analyze user movements, track repetitions, and provide feedback.",
-        team: ["Vishnu K (Solo Project)"],
-        techStack: ["Python", "Machine Learning", "AI", "Kaggle Dataset"],
-        demoUrl: null,
-        githubUrl: "https://github.com/vishnucax/Ai-personal-physical-trainer"
+        name: "ST Thomas College Konni official website",
+        image: null,
+        video: "Videos/lead-stc.mp4",
+        brief: "The official website for ST Thomas College, Konni, redesigned and developed to provide a comprehensive digital platform.",
+        detailedBrief: "Designed and developed the official website for ST Thomas College, Konni. This project aims to provide a robust digital presence for the institution, facilitating communication and information sharing between students, faculty, and the public. Developed by Vishnu K in collaboration with Arjun KP.",
+        team: ["Vishnu K (Fullstack Developer)", "Arjun KP (Faculty, Lead College)"],
+        techStack: ["PHP", "HTML5", "CSS3", "JavaScript"],
+        demoUrl: "https://www.stthomascollegekonni.com/",
+        githubUrl: null
     },
     3: {
         name: "Researcher Portfolio",
@@ -100,6 +100,18 @@ const moreProjects = [
         techStack: ["HTML5", "CSS3"],
         demoUrl: "https://vishnucax.github.io/Elon-Musk-Portfolio/",
         githubUrl: "https://github.com/vishnucax/Elon-Musk-Portfolio"
+    },
+    {
+        id: 9,
+        name: "AI Physical Trainer",
+        image: "https://takeleap.com/assets/images/works/b3d05feaa0a97e9681a5d5adca209947.jpg",
+        video: null,
+        brief: "An AI/ML project that functions as a personal physical trainer evaluating your movements.",
+        detailedBrief: "This solo AI/ML project acts as a personal physical trainer. It utilizes machine learning models trained on Kaggle datasets to analyze user movements, track repetitions, and provide feedback.",
+        team: ["Vishnu K (Solo Project)"],
+        techStack: ["Python", "Machine Learning", "AI", "Kaggle Dataset"],
+        demoUrl: null,
+        githubUrl: "https://github.com/vishnucax/Ai-personal-physical-trainer"
     }
 ];
 
