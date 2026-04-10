@@ -185,7 +185,7 @@ const certificatesData = [
         name: "React Development",
         issuer: "Srishti Campus",
         date: "2024",
-        logo: "https://media.licdn.com/dms/image/v2/C4D0BAQFDTBJLTTnchg/company-logo_200_200/company-logo_200_200/0/1631373808913?e=2147483647&v=beta&t=7i1pu8cJwCI3KaTZbRilNfJNlkg7dcuritoJnzkFCyc",
+        logo: "./Images/srishti-logo.jpeg",
         image: "./Images/Certs/srishti-react.jpeg",
         description: "Advanced certification in React.js, focusing on component-based architecture, state management, and modern frontend practices.",
         skills: ["React.js", "Frontend Development", "JavaScript", "UI/UX"],
@@ -197,7 +197,7 @@ const certificatesData = [
         name: "Flutter App Development",
         issuer: "Srishti Campus",
         date: "2024",
-        logo: "https://media.licdn.com/dms/image/v2/C4D0BAQFDTBJLTTnchg/company-logo_200_200/company-logo_200_200/0/1631373808913?e=2147483647&v=beta&t=7i1pu8cJwCI3KaTZbRilNfJNlkg7dcuritoJnzkFCyc",
+        logo: "./Images/srishti-logo.jpeg",
         image: "./Images/Certs/srishti-flutter.jpeg",
         description: "Comprehensive certification in Flutter and Dart for cross-platform mobile application development.",
         skills: ["Flutter", "Dart", "Mobile App Development", "Cross-Platform"],
@@ -234,6 +234,18 @@ const certificatesData = [
 const moreCertificates = [
     {
         id: 5,
+        name: "Ethical Hacking Starter Program",
+        issuer: "Offenso Hackers Academy",
+        date: "2026",
+        logo: "./Images/offenso-logo.jpeg",
+        image: "./Images/Certs/EHSP.jpg",
+        description: "An introductory training program on Ethical Hacking and cybersecurity concepts.",
+        skills: ["Ethical Hacking", "Cybersecurity", "Networking", "Penetration Testing"],
+        credentialUrl: null,
+        downloadUrl: "./Images/Certs/EHSP.jpg"
+    },
+    {
+        id: 6,
         name: "Build a Full Website using WordPress",
         issuer: "Coursera",
         date: "November 4, 2025",
@@ -245,7 +257,7 @@ const moreCertificates = [
         downloadUrl: "./Images/Certs/WordpressFull.png"
     },
     {
-        id: 6,
+        id: 7,
         name: "Build a Free Website with WordPress",
         issuer: "Coursera",
         date: "November 4, 2025",
@@ -257,7 +269,7 @@ const moreCertificates = [
         downloadUrl: "./Images/Certs/WordpressFree.png"
     },
     {
-        id: 7,
+        id: 8,
         name: "AI For All - Awareness Badge",
         issuer: "Government of India & Intel",
         date: "2025",
@@ -269,7 +281,7 @@ const moreCertificates = [
         downloadUrl: "./Images/Certs/aiforall-intel.png"
     },
     {
-        id: 8,
+        id: 9,
         name: "HTML and CSS",
         issuer: "Ethnotech Academy",
         date: "October 2023",
@@ -281,7 +293,7 @@ const moreCertificates = [
         downloadUrl: "./Images/Certs/ethnotech-html.png"
     },
     {
-        id: 9,
+        id: 10,
         name: "Software Foundation Course - C++",
         issuer: "Ethnotech Academy",
         date: "January 2023",
