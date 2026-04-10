@@ -3593,6 +3593,20 @@ body {
     color: #E57373;
 }
 
+/* Per-field validation error text */
+.field-error {
+    display: none;
+    color: #F44336;
+    font-size: 0.82rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+    padding-left: 0.2rem;
+}
+
+.dark-mode .field-error {
+    color: #E57373;
+}
+
 /* Contact Item Styling */
 .contact-details {
     display: flex;

@@ -1433,154 +1433,138 @@ document.addEventListener('DOMContentLoaded', function () {
    Contact Form Handling
    ======================================== */
 
-// Contact form submission
 document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+    if (!contactForm) return;
 
-            // Get form data
-            const formDataObj = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
+    // Clear field error
+    function clearError(id) {
+        const el = document.getElementById(id);
+        if (el) { el.textContent = ''; el.style.display = 'none'; }
+        const input = document.getElementById(id.replace('Error', ''));
+        if (input) input.classList.remove('invalid');
+    }
 
-            // Validate form
-            if (!validateContactForm(formDataObj)) {
-                showFormMessage('Please fill in all fields correctly.', 'error');
-                return;
-            }
+    // Show field error
+    function showError(inputId, errorId, msg) {
+        const el = document.getElementById(errorId);
+        if (el) { el.textContent = msg; el.style.display = 'block'; }
+        const input = document.getElementById(inputId);
+        if (input) { input.classList.add('invalid'); input.style.borderColor = 'rgba(244, 67, 54, 0.6)'; }
+    }
 
-            // Show loading state
-            const submitBtn = contactForm.querySelector('.submit-btn');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-
-            // Actual form submission using fetch to form action
-            const formData = new FormData(contactForm);
-            fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success === "true" || data.success === "false" || data.ok || typeof data.success !== 'undefined') {
-                    // formsubmit ajax endpoint returns success
-                    showFormMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
-                    contactForm.reset();
-                } else {
-                    showFormMessage('Oops! Something went wrong. Please try again later.', 'error');
-                }
-            })
-            .catch(error => {
-                showFormMessage('Oops! Connection failed. Please try again later.', 'error');
-            })
-            .finally(() => {
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                
-                // Hide message after 8 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 8000);
-            });
+    // Clear all field errors
+    function clearAllErrors() {
+        ['name', 'email', 'phone', 'subject', 'message'].forEach(f => {
+            clearError(f + 'Error');
         });
     }
-});
 
-// Validate contact form
-function validateContactForm(data) {
-    // Check if all fields are filled
-    if (!data.name || !data.email || !data.subject || !data.message) {
-        return false;
+    // Validate all fields, returns true if valid
+    function validateAll() {
+        let valid = true;
+        clearAllErrors();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || name.length < 2) {
+            showError('name', 'nameError', 'Please enter your full name (min 2 characters).');
+            valid = false;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            showError('email', 'emailError', 'Please enter your email address.');
+            valid = false;
+        } else if (!emailRegex.test(email)) {
+            showError('email', 'emailError', 'Please enter a valid email address.');
+            valid = false;
+        }
+
+        if (!phone || phone.length < 7) {
+            showError('phone', 'phoneError', 'Please enter a valid phone number.');
+            valid = false;
+        }
+
+        if (!subject || subject.length < 3) {
+            showError('subject', 'subjectError', 'Please enter what you are interested in.');
+            valid = false;
+        }
+
+        if (!message || message.length < 10) {
+            showError('message', 'messageError', 'Please enter a message (min 10 characters).');
+            valid = false;
+        }
+
+        return valid;
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        return false;
-    }
-
-    // Validate name (at least 2 characters)
-    if (data.name.trim().length < 2) {
-        return false;
-    }
-
-    // Validate subject (at least 3 characters)
-    if (data.subject.trim().length < 3) {
-        return false;
-    }
-
-    // Validate message (at least 10 characters)
-    if (data.message.trim().length < 10) {
-        return false;
-    }
-
-    return true;
-}
-
-// Show form message
-function showFormMessage(message, type) {
-    const formMessage = document.getElementById('formMessage');
-    formMessage.textContent = message;
-    formMessage.className = 'form-message ' + type;
-    formMessage.style.display = 'block';
-
-    // Scroll to message
-    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-// Add input validation feedback
-document.addEventListener('DOMContentLoaded', function () {
-    const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-
-    inputs.forEach(input => {
-        input.addEventListener('blur', function () {
-            validateInput(this);
+    // Live validation on blur
+    ['name', 'email', 'phone', 'subject', 'message'].forEach(function(fieldId) {
+        const input = document.getElementById(fieldId);
+        if (!input) return;
+        input.addEventListener('blur', function() { validateAll(); });
+        input.addEventListener('input', function() {
+            if (this.classList.contains('invalid')) validateAll();
         });
+    });
 
-        input.addEventListener('input', function () {
-            if (this.classList.contains('invalid')) {
-                validateInput(this);
+    // Form submit
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (!validateAll()) {
+            showFormMessage('Please fix the errors above before sending.', 'error');
+            return;
+        }
+
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        formMessage.style.display = 'none';
+
+        const formData = new FormData(contactForm);
+
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success === 'true' || data.success === true) {
+                showFormMessage('✅ Thank you! Your message has been sent. I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+                clearAllErrors();
+            } else {
+                showFormMessage('❌ Something went wrong. Please try again or email me directly.', 'error');
             }
+        })
+        .catch(() => {
+            showFormMessage('❌ Connection error. Please check your internet or email me directly at vishnukookkal@gmail.com.', 'error');
+        })
+        .finally(() => {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            setTimeout(() => { formMessage.style.display = 'none'; }, 10000);
         });
     });
 });
 
-// Validate individual input
-function validateInput(input) {
-    const value = input.value.trim();
-    let isValid = true;
-
-    if (input.hasAttribute('required') && !value) {
-        isValid = false;
-    }
-
-    if (input.type === 'email' && value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        isValid = emailRegex.test(value);
-    }
-
-    if (input.tagName === 'TEXTAREA' && value && value.length < 10) {
-        isValid = false;
-    }
-
-    if (isValid) {
-        input.classList.remove('invalid');
-        input.style.borderColor = '';
-    } else {
-        input.classList.add('invalid');
-        input.style.borderColor = 'rgba(244, 67, 54, 0.6)';
-    }
-
-    return isValid;
+// Show form banner message
+function showFormMessage(message, type) {
+    const formMessage = document.getElementById('formMessage');
+    if (!formMessage) return;
+    formMessage.textContent = message;
+    formMessage.className = 'form-message ' + type;
+    formMessage.style.display = 'block';
+    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
