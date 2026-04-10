@@ -1443,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
 
             // Get form data
-            const formData = {
+            const formDataObj = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 subject: document.getElementById('subject').value,
@@ -1451,7 +1451,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Validate form
-            if (!validateContactForm(formData)) {
+            if (!validateContactForm(formDataObj)) {
                 showFormMessage('Please fill in all fields correctly.', 'error');
                 return;
             }
@@ -1462,45 +1462,37 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
 
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Success simulation
-                showFormMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
-                contactForm.reset();
-
-                // Reset button
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }, 1500);
-
-            // PRODUCTION: Replace the setTimeout above with actual form submission
-            // Example using FormSubmit.co or similar service:
-            /*
-            fetch('https://formsubmit.co/your-email@example.com', {
+            // Actual form submission using fetch to form action
+            const formData = new FormData(contactForm);
+            fetch(contactForm.action, {
                 method: 'POST',
+                body: formData,
                 headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
+                    'Accept': 'application/json'
+                }
             })
             .then(response => response.json())
             .then(data => {
-                showFormMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
-                contactForm.reset();
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
+                if (data.success === "true" || data.success === "false" || data.ok || typeof data.success !== 'undefined') {
+                    // formsubmit ajax endpoint returns success
+                    showFormMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+                    contactForm.reset();
+                } else {
+                    showFormMessage('Oops! Something went wrong. Please try again later.', 'error');
+                }
             })
             .catch(error => {
-                showFormMessage('Oops! Something went wrong. Please try again later.', 'error');
+                showFormMessage('Oops! Connection failed. Please try again later.', 'error');
+            })
+            .finally(() => {
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
+                
+                // Hide message after 8 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 8000);
             });
-            */
         });
     }
 });
