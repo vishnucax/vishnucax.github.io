@@ -1,37 +1,36 @@
-// Project data
 const projectsData = {
     1: {
         name: "Lead College Website",
         image: null,
         video: "Videos/leadweb1.mp4",
-        brief: "Official website for LEAD College (Autonomous), Palakkad, redesigned and developed using WordPress and PHP.",
-        detailedBrief: "Full redesign and development of the official LEAD College website. Revamped the user interface and user experience with a modern theme, utilizing WordPress, PHP, Elementor, HTML, and CSS.",
+        brief: "Complete redesign of LEAD College's official website — a modern, responsive platform serving students, faculty, and the public.",
+        detailedBrief: "Led the end-to-end redesign and development of the official LEAD College (Autonomous), Palakkad website. The project involved rebuilding the entire digital presence of the institution with a modern, mobile-first interface using WordPress, PHP, and Elementor. Key deliverables included improved navigation, structured academic content, faculty portals, event highlights, and SEO optimization — resulting in a significantly enhanced user experience for thousands of visitors.",
         team: ["Vishnu K (Fullstack Developer & UI/UX Designer)", "Nikhil AP (Fullstack Developer)", "Abhinand Vishwam (Fullstack Developer)", "Fathima Shan (Frontend & Content Writer)", "Gopika (Frontend & Content Writer)"],
         techStack: ["WordPress", "PHP", "Elementor", "HTML5", "CSS3"],
         demoUrl: "https://www.lead.ac.in",
         githubUrl: null
     },
     2: {
-        name: "ST Thomas College Konni official website",
-        image: null,
-        video: "Videos/lead-stc.mp4",
-        brief: "The official website for ST Thomas College, Konni, redesigned and developed to provide a comprehensive digital platform.",
-        detailedBrief: "Designed and developed the official website for ST Thomas College, Konni. This project aims to provide a robust digital presence for the institution, facilitating communication and information sharing between students, faculty, and the public. Developed by Vishnu K in collaboration with Arjun KP.",
-        team: ["Vishnu K (Fullstack Developer)", "Arjun KP (Faculty, Lead College)"],
-        techStack: ["PHP", "HTML5", "CSS3", "JavaScript"],
-        demoUrl: "https://www.stthomascollegekonni.com/",
-        githubUrl: null
+        name: "Smart Ecom",
+        image: "https://opengraph.githubassets.com/1/vishnucax/smart-ecom",
+        video: null,
+        brief: "A full-stack microservices e-commerce platform built to simulate a real-world shopping experience.",
+        detailedBrief: "SmartShop is a comprehensive e-commerce system that connects multiple independent microservices into a complete checkout pipeline. It features a modern React frontend and a robust Flask-based backend with five modular microservices (Inventory, Cart, Discount, Payment, RabbitMQ) for separation of concerns. The platform includes an Admin Dashboard for order tracking, inventory management with real-world complexities like stock reservation, and input validation to prevent overselling.",
+        team: ["Vishnu K"],
+        techStack: ["React", "Flask", "MySQL", "RabbitMQ", "Docker"],
+        demoUrl: null,
+        githubUrl: "https://github.com/vishnucax/smart-ecom"
     },
     3: {
-        name: "Researcher Portfolio",
-        image: "https://opengraph.githubassets.com/1/Satyendra-K/Satyendra-K.github.io",
+        name: "Secure Health API",
+        image: "https://opengraph.githubassets.com/1/vishnucax/secure-health-api",
         video: null,
-        brief: "Full design, development, and deployment of a professional portfolio website for a researcher.",
-        detailedBrief: "A high-performance personal portfolio website designed for a researcher. The project involved full-stack development, custom UI/UX design, and deployment on GitHub Pages. It features sections for publications, research interests, and professional milestones.",
-        team: ["Vishnu K (Developer & Designer)"],
-        techStack: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
-        demoUrl: "https://satyendra-k.github.io/",
-        githubUrl: "https://github.com/Satyendra-K/Satyendra-K.github.io"
+        brief: "An end-to-end secure healthcare microservice demonstrating IAM (Keycloak RBAC) and advanced encryption.",
+        detailedBrief: "A production-grade secure patient records management system reflecting real-world DevOps and healthcare application security practices. Developed as an advanced cloud technologies project, it implements Identity & Access Management using Keycloak RBAC, TLS encryption in transit, AES-256 encryption at rest before being saved to a MySQL database, and automated CI/CD pipelines via Jenkins, all completely containerized using Docker Compose.",
+        team: ["Vishnu K"],
+        techStack: ["Python", "Flask", "MySQL", "Keycloak", "Docker", "Jenkins"],
+        demoUrl: null,
+        githubUrl: "https://github.com/vishnucax/secure-health-api"
     }
 };
 
@@ -39,79 +38,140 @@ const projectsData = {
 const sampleProjects = [
     {
         id: 4,
-        name: "Future Predictor",
+        name: "FixItNow - Home Service Platform",
         image: null,
-        video: "Videos/Future-Predictor.mp4",
-        brief: "A fun and interactive web application that predicts the future.",
-        detailedBrief: "Future Predictor is a web-based project that offers users entertaining predictions about their future. It features a hacker-themed UI and interactive elements.",
+        video: "Videos/fixitnow-video (1).mp4",
+        brief: "A professional home service providing platform built with Django, featuring dual authentication for customers and service pros.",
+        detailedBrief: "FixItNow is a comprehensive home service booking platform developed as a BCA final year project by a two-member team. The application provides dedicated portals for customers and service providers, categorized services (cleaning, plumbing, electrical), a real-time booking management system, and secure payment integrations using Razorpay API.",
+        team: ["Vishnu K", "Team Member"],
+        techStack: ["Django", "Python", "Bootstrap", "PostgreSQL", "Razorpay"],
+        demoUrl: "https://fixitnow-home-service-providing-pla.vercel.app/",
+        githubUrl: "https://github.com/vishnucax/fixitnow-home-service-providing-platform"
+    },
+    {
+        id: 5,
+        name: "ST Thomas College Konni",
+        image: null,
+        video: "Videos/lead-stc.mp4",
+        brief: "Official website for ST Thomas College, Konni — a feature-rich institutional platform built with PHP, HTML5, and CSS3.",
+        detailedBrief: "Designed and developed the full institutional website for ST Thomas College, Konni, establishing a robust digital presence for the college. The platform facilitates seamless communication between students, faculty, and the general public, featuring structured course pages, news & events, faculty directories, and administrative information.",
+        team: ["Vishnu K (Fullstack Developer)", "Arjun KP (Faculty, Lead College)"],
+        techStack: ["PHP", "HTML5", "CSS3", "JavaScript"],
+        demoUrl: "https://www.stthomascollegekonni.com/",
+        githubUrl: null
+    },
+    {
+        id: 6,
+        name: "TaskFlow - Todo App",
+        image: null,
+        video: "Videos/Todo.mp4",
+        brief: "A responsive and feature-rich task manager application providing seamless task organization and progress tracking.",
+        detailedBrief: "TaskFlow is an advanced task management application designed to help users efficiently manage their daily tasks. The app includes secure user authentication functionalities along with a clean, intuitive dashboard. Users can seamlessly create, track, and complete tasks with progress indicators and structured organization features ensuring a highly productive workflow.",
         team: ["Vishnu K"],
-        techStack: ["HTML", "CSS", "JavaScript"],
-        demoUrl: "https://vishnucax.github.io/future-predictor/",
-        githubUrl: "https://github.com/vishnucax/future-predictor"
+        techStack: ["HTML", "CSS", "JavaScript", "Firebase"],
+        demoUrl: "https://taskflow-app-69b29.web.app/login",
+        githubUrl: "https://github.com/vishnucax/taskflow"
     }
 ];
 
 // More projects data
 const moreProjects = [
     {
-        id: 5,
-        name: "ESP32 Cybersecurity Captive Portal",
-        image: "https://opengraph.githubassets.com/1/vishnucax/ESP32-Cybersecurity-Awareness-Captive-Portal",
+        id: 7,
+        name: "LEAD Connect",
+        image: "https://opengraph.githubassets.com/1/vishnucax/leadconnect",
         video: null,
-        brief: "An ESP32-based captive portal designed for cybersecurity awareness and education.",
-        detailedBrief: "This project demonstrates how captive portals work and serves as an educational tool for cybersecurity awareness. It is built using an ESP32 microcontroller and demonstrates network-level interactions.",
+        brief: "An online stranger videocall platform to connect LEAD students with each other.",
+        detailedBrief: "LEAD Connect is an online stranger videocall platform designed to connect LEAD students with each other. Students can sign in seamlessly with their LEAD mail to connect, make new friends among strangers, and effectively destroy the barriers between departments.",
         team: ["Vishnu K"],
-        techStack: ["ESP32", "C++", "Cybersecurity", "Networking"],
-        demoUrl: null,
-        githubUrl: "https://github.com/vishnucax/ESP32-Cybersecurity-Awareness-Captive-Portal"
+        techStack: ["HTML", "CSS", "JavaScript", "Firebase", "WebRTC"],
+        demoUrl: "https://vishnucax.github.io/leadconnect/",
+        githubUrl: "https://github.com/vishnucax/leadconnect",
+        isWIP: true
     },
     {
-        id: 6,
+        id: 8,
+        name: "AI Physical Trainer",
+        image: "https://takeleap.com/assets/images/works/b3d05feaa0a97e9681a5d5adca209947.jpg",
+        video: null,
+        brief: "Real-time AI-powered personal trainer using MediaPipe pose estimation to analyze exercises and count reps via a live webcam feed.",
+        detailedBrief: "An AI/ML application that acts as a real-time personal physical trainer using computer vision. Built with Python, OpenCV, and MediaPipe's Pose Estimation model, it tracks key body landmarks through a webcam feed to detect exercises, analyze form/posture, and accurately count repetitions in real time. The system provides instant visual feedback, helping users train more effectively without a human trainer.",
+        team: ["Vishnu K (Solo Project)"],
+        techStack: ["Python", "Machine Learning", "AI", "Kaggle Dataset"],
+        demoUrl: null,
+        githubUrl: "https://github.com/vishnucax/Ai-personal-physical-trainer"
+    },
+    {
+        id: 9,
+        name: "Researcher Portfolio",
+        image: "https://opengraph.githubassets.com/1/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io",
+        video: null,
+        brief: "Custom academic portfolio for a researcher — showcasing publications, projects, and professional milestones.",
+        detailedBrief: "Designed and deployed a comprehensive personal portfolio website for a researcher, built entirely with HTML, CSS, and JavaScript and hosted on GitHub Pages. The site features dedicated sections for academic publications, conference presentations, certifications, and a project gallery.",
+        team: ["Vishnu K (Developer & Designer)"],
+        techStack: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+        demoUrl: "https://satyendra-kushwaha.github.io/",
+        githubUrl: "https://github.com/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io"
+    },
+    {
+        id: 10,
         name: "TF-IDF Movie Recommender",
         image: null,
         video: "Videos/Movie-Recomentation.mp4",
-        brief: "A movie recommendation system utilizing TF-IDF analysis on Kaggle datasets.",
-        detailedBrief: "This solo project is a content-based recommendation system that suggests similar movies to users. It uses Term Frequency-Inverse Document Frequency (TF-IDF) analysis to find similarities between movie descriptions and metadata.",
+        brief: "A Python-powered content-based movie recommendation engine using TF-IDF vectorization on multi-source Kaggle datasets.",
+        detailedBrief: "A content-based movie recommendation system built using Python, Pandas, and Scikit-learn's TF-IDF Vectorizer. The system analyzes movie metadata — including plots, genres, cast, and keywords — from merged Kaggle datasets to compute cosine similarity scores and surface the most relevant film suggestions.",
         team: ["Vishnu K (Solo Project)"],
         techStack: ["Python", "Machine Learning", "TF-IDF", "Kaggle Dataset"],
         demoUrl: null,
         githubUrl: "https://github.com/vishnucax/TF-IDF-analysis-based-similar-movie-suggesting-system"
     },
     {
-        id: 7,
+        id: 11,
+        name: "Future Predictor",
+        image: null,
+        video: "Videos/Future-Predictor.mp4",
+        brief: "An entertaining web app with a hacker-themed UI that generates humorous, randomized predictions about your future.",
+        detailedBrief: "Future Predictor is a fun, interactive web application that delivers playfully dramatic predictions about the user's future. Built with pure HTML, CSS, and JavaScript, it features a hacker-inspired terminal UI, randomized prediction algorithms, smooth animations, and a highly engaging user experience.",
+        team: ["Vishnu K"],
+        techStack: ["HTML", "CSS", "JavaScript"],
+        demoUrl: "https://vishnucax.github.io/future-predictor/",
+        githubUrl: "https://github.com/vishnucax/future-predictor"
+    },
+    {
+        id: 12,
+        name: "Cybersecurity Captive Portal",
+        image: "https://opengraph.githubassets.com/1/vishnucax/ESP32-Cybersecurity-Awareness-Captive-Portal",
+        video: null,
+        brief: "An ESP32-powered captive portal that simulates real-world Wi-Fi phishing attacks as a hands-on cybersecurity tool.",
+        detailedBrief: "This hardware-software project uses an ESP32 microcontroller (programmed in C++) to create a simulated Wi-Fi captive portal. When a device connects to the rogue hotspot, it is redirected to a custom awareness page that educates users about the dangers of connecting to unknown networks.",
+        team: ["Vishnu K"],
+        techStack: ["ESP32", "C++", "Cybersecurity", "Networking"],
+        demoUrl: null,
+        githubUrl: "https://github.com/vishnucax/ESP32-Cybersecurity-Awareness-Captive-Portal"
+    },
+    {
+        id: 13,
         name: "Apple Website Clone",
         image: "./Images/Projects/AppleClone.png",
         video: null,
-        brief: "A pixel-perfect clone of the Apple website featuring smooth animations and responsive design.",
-        detailedBrief: "Developed in Feb 2025. This project demonstrates high-fidelity replication of complex UI/UX elements found on the official Apple website, including navigation menus, product showcases, and responsive layouts. Key features include smooth scroll animations, interactive product displays, and a mobile-first approach.",
+        brief: "A pixel-perfect front-end recreation of the Apple website with smooth animations, responsive layouts, and iconic Apple aesthetics.",
+        detailedBrief: "Developed in February 2025, this project is a high-fidelity front-end clone of Apple's official website, built using only HTML5 and CSS3. It meticulously replicates Apple's signature minimalist design language — including the sticky navigation bar, full-screen hero sections, product showcase grids, and a fully responsive mobile layout.",
         team: ["Vishnu K (Solo Project)"],
         techStack: ["HTML5", "CSS3", "JavaScript"],
         demoUrl: "https://vishnucax.github.io/apple-website-clone/",
         githubUrl: "https://github.com/vishnucax/apple-website-clone"
     },
     {
-        id: 8,
+        id: 14,
         name: "Elon Musk Portfolio",
         image: null,
         video: "Videos/elonmuskportvideo1.mp4",
-        brief: "My first HTML & CSS only project: A showcase portfolio website inspired by Elon Musk.",
-        detailedBrief: "This is my very first project built entirely using HTML and CSS. It works as a personal portfolio website dedicated to showcasing work and achievements, featuring a clean, responsive design inspired by Elon Musk, emphasizing structure and styling without relying on JavaScript frameworks.",
+        brief: "My debut web project — a full portfolio website inspired by Elon Musk, built using purely HTML & CSS with a clean, bold design.",
+        detailedBrief: "This was my very first web development project — a fully structured portfolio website inspired by Elon Musk's persona and ventures, built using HTML5 and CSS3 alone. The site features a professional timeline of achievements, venture showcases, a responsive layout, and thoughtfully crafted typography and color schemes.",
         team: ["Vishnu K (Lead Developer)"],
         techStack: ["HTML5", "CSS3"],
         demoUrl: "https://vishnucax.github.io/Elon-Musk-Portfolio/",
         githubUrl: "https://github.com/vishnucax/Elon-Musk-Portfolio"
-    },
-    {
-        id: 9,
-        name: "AI Physical Trainer",
-        image: "https://takeleap.com/assets/images/works/b3d05feaa0a97e9681a5d5adca209947.jpg",
-        video: null,
-        brief: "An AI/ML project that functions as a personal physical trainer evaluating your movements.",
-        detailedBrief: "This solo AI/ML project acts as a personal physical trainer. It utilizes machine learning models trained on Kaggle datasets to analyze user movements, track repetitions, and provide feedback.",
-        team: ["Vishnu K (Solo Project)"],
-        techStack: ["Python", "Machine Learning", "AI", "Kaggle Dataset"],
-        demoUrl: null,
-        githubUrl: "https://github.com/vishnucax/Ai-personal-physical-trainer"
     }
 ];
 
@@ -659,6 +719,13 @@ function showProjectDetails(projectId) {
     const container = document.getElementById('projectDetailsContainer');
 
     // Create popup content
+    let demoBtnAction = '';
+    if (project.isWIP) {
+        demoBtnAction = `onclick="handleDemoClick(event, '${project.demoUrl}', true)"`;
+    } else {
+        demoBtnAction = `onclick="handleDemoClick(event, ${project.demoUrl ? `'${project.demoUrl}'` : 'null'})"`;
+    }
+
     container.innerHTML = `
         <div class="popup-project-media">
             ${project.video ?
@@ -668,6 +735,7 @@ function showProjectDetails(projectId) {
                 </video>` :
             `<img src="${project.image}" alt="${project.name}" loading="lazy">`
         }
+
         </div>
         <div class="popup-project-info">
             <h3 class="popup-project-name">${project.name}</h3>
@@ -698,7 +766,7 @@ function showProjectDetails(projectId) {
             </div>
             
             <div class="popup-project-buttons">
-                <a href="#" class="popup-project-btn demo" onclick="handleDemoClick(event, ${project.demoUrl ? `'${project.demoUrl}'` : 'null'})">
+                <a href="#" class="popup-project-btn demo" ${demoBtnAction}>
                     <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
                 ${project.githubUrl ? `<a href="${project.githubUrl}" class="popup-project-btn github" target="_blank">
@@ -727,11 +795,17 @@ document.getElementById('projectDetailsPopup').addEventListener('click', functio
     }
 });
 
-// Handle demo click with popup for unavailable demos
-function handleDemoClick(event, demoUrl) {
+// Add wipUrl global variable
+let currentWipUrl = '';
+
+// Handle demo click with popup for unavailable demos or WIP projects
+function handleDemoClick(event, demoUrl, isWIP = false) {
     event.preventDefault();
 
-    if (demoUrl && demoUrl !== 'null' && demoUrl !== 'undefined') {
+    if (isWIP) {
+        currentWipUrl = demoUrl;
+        document.getElementById('wipPopup').classList.add('active');
+    } else if (demoUrl && demoUrl !== 'null' && demoUrl !== 'undefined') {
         // Open demo in new tab
         window.open(demoUrl, '_blank');
     } else {
@@ -739,6 +813,37 @@ function handleDemoClick(event, demoUrl) {
         showDemoPopup();
     }
 }
+
+// Show demo unavailable popup
+function showDemoPopup() {
+    const popup = document.getElementById('demoPopup');
+    popup.classList.add('active');
+}
+
+// Close demo popup
+function closeDemoPopup() {
+    const popup = document.getElementById('demoPopup');
+    popup.classList.remove('active');
+}
+
+// Close WIP popup
+function closeWipPopup() {
+    const popup = document.getElementById('wipPopup');
+    popup.classList.remove('active');
+}
+
+// Wip popup proceed connection
+document.addEventListener('DOMContentLoaded', () => {
+    const proceedWipBtn = document.getElementById('proceedWipBtn');
+    if (proceedWipBtn) {
+        proceedWipBtn.addEventListener('click', () => {
+            closeWipPopup();
+            if (currentWipUrl) {
+                window.open(currentWipUrl, '_blank');
+            }
+        });
+    }
+});
 
 // Show demo unavailable popup
 function showDemoPopup() {
@@ -767,6 +872,7 @@ document.addEventListener('keydown', function (e) {
         closeVerifyPopup();
         closeCertificateModal();
         closeAchievementDetails();
+        closeWipPopup();
     }
 });
 
@@ -788,7 +894,7 @@ function addProjectCard(project) {
             <h3 class="project-name">${project.name}</h3>
             <p class="project-brief">${project.brief}</p>
             <div class="project-buttons">
-                <a href="#" class="project-btn demo" data-project="${project.id}" onclick="handleDemoClick(event, '${project.demoUrl}')">
+                <a href="#" class="project-btn demo" data-project="${project.id}" onclick="handleDemoClick(event, '${project.demoUrl}', ${project.isWIP ? true : false})">
                     <i class="fas fa-external-link-alt"></i> View Demo
                 </a>
                 ${project.githubUrl ? `<a href="${project.githubUrl}" class="project-btn github" target="_blank">
