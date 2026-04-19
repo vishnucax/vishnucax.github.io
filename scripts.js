@@ -379,7 +379,7 @@ const moreCertificates = [
 ];
 
 // Track loaded projects
-let loadedProjectCount = 3; // Initially loaded 3 projects
+let loadedProjectCount = 6; // Initially loaded 6 projects (including hardcoded ones)
 const projectsPerLoad = 3;
 const allProjects = [...sampleProjects, ...moreProjects];
 
@@ -845,18 +845,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Show demo unavailable popup
-function showDemoPopup() {
-    const popup = document.getElementById('demoPopup');
-    popup.classList.add('active');
-}
-
-// Close demo popup
-function closeDemoPopup() {
-    const popup = document.getElementById('demoPopup');
-    popup.classList.remove('active');
-}
-
+// Popup logic for demos and other UI elements handled above
 // Close popup when clicking outside
 document.getElementById('demoPopup').addEventListener('click', function (e) {
     if (e.target === this) {
