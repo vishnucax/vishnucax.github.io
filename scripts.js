@@ -64,7 +64,7 @@ const sampleProjects = [
         id: 6,
         name: "TaskFlow - Todo App",
         image: null,
-        video: "Videos/Todo.mp4",
+        video: "Videos/Todo (1).mp4",
         brief: "A responsive and feature-rich task manager application providing seamless task organization and progress tracking.",
         detailedBrief: "TaskFlow is an advanced task management application designed to help users efficiently manage their daily tasks. The app includes secure user authentication functionalities along with a clean, intuitive dashboard. Users can seamlessly create, track, and complete tasks with progress indicators and structured organization features ensuring a highly productive workflow.",
         team: ["Vishnu K"],
@@ -873,8 +873,33 @@ document.addEventListener('keydown', function (e) {
         closeCertificateModal();
         closeAchievementDetails();
         closeWipPopup();
+        closeResumePopup();
     }
 });
+
+// Resume popup functions
+function openResumePopup() {
+    document.getElementById('resumePopup').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeResumePopup() {
+    document.getElementById('resumePopup').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close resume popup when clicking outside
+document.addEventListener('DOMContentLoaded', function () {
+    const resumePopup = document.getElementById('resumePopup');
+    if (resumePopup) {
+        resumePopup.addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeResumePopup();
+            }
+        });
+    }
+});
+
 
 // Function to add project card
 function addProjectCard(project) {

@@ -96,9 +96,9 @@
                     user-friendly digital experiences. I love turning complex problems into simple, elegant solutions.
                 </p>
                 <div class="hero-buttons">
-                    <a href="path/to/your/resume.pdf" class="btn btn-primary" download>
+                    <button class="btn btn-primary" id="resumeDownloadBtn" onclick="openResumePopup()">
                         <i class="fas fa-file-download"></i> Download Resume
-                    </a>
+                    </button>
                     <a href="#contact" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i> Get In Touch
                     </a>
@@ -297,6 +297,58 @@
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                             <button class="project-btn details" onclick="showProjectDetails(3)">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: FixItNow -->
+                <div class="project-card" data-id="4">
+                    <div class="project-media">
+                        <video controls autoplay loop muted playsinline>
+                            <source src="Videos/fixitnow-video (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">FixItNow - Home Service Platform</h3>
+                        <p class="project-brief">A professional home service providing platform built with Django, featuring dual authentication for customers and service pros.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="project-btn demo" data-project="4"
+                                onclick="handleDemoClick(event, 'https://fixitnow-home-service-providing-pla.vercel.app/')">
+                                <i class="fas fa-external-link-alt"></i> View Demo
+                            </a>
+                            <a href="https://github.com/vishnucax/fixitnow-home-service-providing-platform" class="project-btn github" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <button class="project-btn details" onclick="showProjectDetails(4)">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: TaskFlow Todo -->
+                <div class="project-card" data-id="6">
+                    <div class="project-media">
+                        <video controls autoplay loop muted playsinline>
+                            <source src="Videos/Todo (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">TaskFlow - Todo App</h3>
+                        <p class="project-brief">A responsive and feature-rich task manager application providing seamless task organization and progress tracking.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="project-btn demo" data-project="6"
+                                onclick="handleDemoClick(event, 'https://taskflow-app-69b29.web.app/login')">
+                                <i class="fas fa-external-link-alt"></i> View Demo
+                            </a>
+                            <a href="https://github.com/vishnucax/taskflow" class="project-btn github" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <button class="project-btn details" onclick="showProjectDetails(6)">
                                 <i class="fas fa-info-circle"></i> Details
                             </button>
                         </div>
@@ -658,6 +710,54 @@
         <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
         <img class="lightbox-content" id="lightboxImage">
         <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- Resume Download Popup -->
+    <div class="resume-popup-overlay" id="resumePopup">
+        <div class="resume-popup-modal">
+            <button class="resume-popup-close" onclick="closeResumePopup()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="resume-popup-header">
+                <div class="resume-popup-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Choose Resume</h3>
+                <p>Select a version to view &amp; download</p>
+            </div>
+            <div class="resume-list">
+                <a class="resume-item" href="Resumes/Vishnu_K-DevOps SDE.pdf" target="_blank" download="Vishnu_K_DevOps_SDE.pdf">
+                    <div class="resume-item-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="resume-item-info">
+                        <span class="resume-item-title">DevOps SDE</span>
+                        <span class="resume-item-sub">Cloud, Docker &amp; Backend Focus</span>
+                    </div>
+                    <i class="fas fa-download resume-item-download"></i>
+                </a>
+                <a class="resume-item" href="Resumes/Vishnu K AI Engineer Resume.pdf" target="_blank" download="Vishnu_K_AI_Engineer_Resume.pdf">
+                    <div class="resume-item-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="resume-item-info">
+                        <span class="resume-item-title">AI Engineer (Backend)</span>
+                        <span class="resume-item-sub">Machine Learning &amp; AI Focus</span>
+                    </div>
+                    <i class="fas fa-download resume-item-download"></i>
+                </a>
+                <a class="resume-item" href="Resumes/Vishnu_K_Frontend_Dev_Resume.pdf" target="_blank" download="Vishnu_K_Frontend_Dev_Resume.pdf">
+                    <div class="resume-item-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="resume-item-info">
+                        <span class="resume-item-title">Frontend Dev</span>
+                        <span class="resume-item-sub">UI/UX &amp; Web Development Focus</span>
+                    </div>
+                    <i class="fas fa-download resume-item-download"></i>
+                </a>
+            </div>
+        </div>
     </div>
 
     <script src="scripts.js"></script>
