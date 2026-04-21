@@ -104,14 +104,14 @@ const moreProjects = [
     {
         id: 9,
         name: "Researcher Portfolio",
-        image: "https://opengraph.githubassets.com/1/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io",
+        image: "https://opengraph.githubassets.com/1/Satyendra-K/Satyendra-K.github.io",
         video: null,
         brief: "Custom academic portfolio for a researcher — showcasing publications, projects, and professional milestones.",
         detailedBrief: "Designed and deployed a comprehensive personal portfolio website for a researcher, built entirely with HTML, CSS, and JavaScript and hosted on GitHub Pages. The site features dedicated sections for academic publications, conference presentations, certifications, and a project gallery.",
         team: ["Vishnu K (Developer & Designer)"],
         techStack: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
-        demoUrl: "https://satyendra-kushwaha.github.io/",
-        githubUrl: "https://github.com/Satyendra-Kushwaha/Satyendra-Kushwaha.github.io"
+        demoUrl: "https://satyendra-k.github.io/",
+        githubUrl: "https://github.com/Satyendra-K/Satyendra-K.github.io"
     },
     {
         id: 10,
@@ -181,7 +181,7 @@ const achievementsData = [
         id: 0,
         name: "Getwork Hackathon Winner",
         organization: "Getwork",
-        date: "2024",
+        date: "2025",
         image: "Images/Getworkhack/cardcover.jpeg",
         brief: "Winner of the Getwork Hackathon for innovative solution.",
         details: "Secured the top position in the Getwork Hackathon. Our team demonstrated exceptional teamwork and innovation to build a solution that addresses real-world challenges.",
