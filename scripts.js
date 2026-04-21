@@ -579,7 +579,32 @@ const techStack = [
     { type: 'icon', value: 'fas fa-shield-alt', name: 'Cybersecurity' },
     { type: 'icon', value: 'fas fa-laptop-code', name: 'Data Science' },
     { type: 'icon', value: 'fab fa-cuttlefish', name: 'C' },
-    { type: 'icon', value: 'fab fa-cuttlefish', name: 'C++' }
+    { type: 'icon', value: 'fab fa-cuttlefish', name: 'C++' },
+    // New Skills requested by user
+    { type: 'icon', value: 'fas fa-infinity', name: 'CI/CD' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg', name: 'PySpark' }, // Using apache logo as fallback if pyspark is not there
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg', name: 'Gen AI' }, // Generic AI logo fallback
+    { type: 'icon', value: 'fas fa-server', name: 'Microservices' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg', name: 'Jenkins' },
+    { type: 'icon', value: 'fab fa-github-actions', name: 'GitHub Actions' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg', name: 'Terraform' },
+    { type: 'icon', value: 'fas fa-code', name: 'IaC' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg', name: 'Grafana' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg', name: 'Prometheus' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/grafana.svg', name: 'Promtail' }, // Using grafana logo as promtail is part of grafana stack
+    { type: 'icon', value: 'fas fa-id-badge', name: 'IAM' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/grafana.svg', name: 'Loki' }, // Loki is part of grafana
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg', name: 'Kubernetes' },
+    { type: 'icon', value: 'fas fa-network-wired', name: 'Nmap' },
+    { type: 'icon', value: 'fas fa-mask', name: 'John the Ripper' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/kalilinux.svg', name: 'Kali Linux' },
+    { type: 'icon', value: 'fas fa-database', name: 'SQL' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg', name: 'Selenium' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg', name: 'Flutter' },
+    { type: 'icon', value: 'fas fa-wifi', name: 'IoT' },
+    { type: 'icon', value: 'fas fa-file-code', name: 'JSON' },
+    { type: 'logo', value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg', name: 'Kafka' },
+    { type: 'icon', value: 'fas fa-network-wired', name: 'REST API' }
 ];
 
 // Create tech cards and duplicate for seamless scrolling
