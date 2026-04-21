@@ -175,8 +175,9 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     margin-bottom: 2rem;
     transition: var(--transition);
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 10px;
+    z-index: 100;
 }
 
 .dark-mode .navbar {
