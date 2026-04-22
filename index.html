@@ -234,21 +234,24 @@
         <section class="projects" id="projects">
             <h2>Projects</h2>
             <div class="projects-grid" id="projectsGrid">
-                <!-- Project 1: Lead College Website -->
+                <!-- Project 1: LEAD Connect -->
                 <div class="project-card" data-id="1">
                     <div class="project-media">
                         <video controls autoplay loop muted playsinline>
-                            <source src="Videos/leadweb1.mp4" type="video/mp4">
+                            <source src="Videos/leadconnect-video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-name">Lead College Website</h3>
-                        <p class="project-brief">Complete redesign of LEAD College's official website — a modern, responsive platform serving students, faculty, and the public.</p>
+                        <h3 class="project-name">LEAD Connect</h3>
+                        <p class="project-brief">An online stranger videocall platform to connect LEAD students with each other.</p>
                         <div class="project-buttons">
                             <a href="#" class="project-btn demo" data-project="1"
-                                onclick="handleDemoClick(event, 'https://www.lead.ac.in')">
+                                onclick="handleDemoClick(event, 'https://campusconnect-frontend-beta.vercel.app/')">
                                 <i class="fas fa-external-link-alt"></i> View Demo
+                            </a>
+                            <a href="https://github.com/vishnucax/leadconnect" class="project-btn github" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
                             </a>
                             <button class="project-btn details" onclick="showProjectDetails(1)">
                                 <i class="fas fa-info-circle"></i> Details
@@ -329,21 +332,24 @@
                     </div>
                 </div>
 
-                <!-- Project 5: ST Thomas College Konni -->
+                <!-- Project 5: Lead College Website -->
                 <div class="project-card" data-id="5">
                     <div class="project-media">
                         <video controls autoplay loop muted playsinline>
-                            <source src="Videos/lead-stc.mp4" type="video/mp4">
+                            <source src="Videos/leadweb1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-name">ST Thomas College Konni</h3>
-                        <p class="project-brief">Official website for ST Thomas College, Konni — a feature-rich institutional platform built with PHP, HTML5, and CSS3.</p>
+                        <h3 class="project-name">Lead College Website</h3>
+                        <p class="project-brief">Complete redesign of LEAD College's official website — a modern, responsive platform serving students, faculty, and the public.</p>
                         <div class="project-buttons">
                             <a href="#" class="project-btn demo" data-project="5"
-                                onclick="handleDemoClick(event, 'https://www.stthomascollegekonni.com/')">
+                                onclick="handleDemoClick(event, 'https://www.lead.ac.in')">
                                 <i class="fas fa-external-link-alt"></i> View Demo
+                            </a>
+                            <a href="#" class="project-btn github" onclick="handleGithubClick(event, 'https://www.lead.ac.in', 'The LEAD college official website is deployed in WordPress. Due to security issues, the GitHub repo is not available.')">
+                                <i class="fab fa-github"></i> GitHub
                             </a>
                             <button class="project-btn details" onclick="showProjectDetails(5)">
                                 <i class="fas fa-info-circle"></i> Details
@@ -352,7 +358,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5: TaskFlow Todo -->
+                <!-- Project 6: TaskFlow - Todo App -->
                 <div class="project-card" data-id="6">
                     <div class="project-media">
                         <video controls autoplay loop muted playsinline>
@@ -699,6 +705,21 @@
             <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
                 <button class="popup-close" style="background: #333; color: white;" onclick="closeWipPopup()">Cancel</button>
                 <button class="popup-close" id="proceedWipBtn">Proceed to see</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW: Popup Modal for GitHub Unavailable -->
+    <div class="popup-overlay" id="githubPopup">
+        <div class="popup-modal">
+            <div class="popup-icon" style="color: #6e5494;">
+                <i class="fab fa-github"></i>
+            </div>
+            <h3 class="popup-title">Repository Unavailable</h3>
+            <p class="popup-message" id="githubPopupMessage">Due to security issues, the GitHub repository is not available.</p>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                <button class="popup-close" style="background: #333; color: white;" onclick="closeGithubPopup()">Close</button>
+                <a href="#" class="popup-close" id="githubVisitWebsiteBtn" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #fd7e14, #ff5500);">Visit Website</a>
             </div>
         </div>
     </div>

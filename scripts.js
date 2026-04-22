@@ -1,14 +1,15 @@
 const projectsData = {
     1: {
-        name: "Lead College Website",
+        name: "LEAD Connect",
         image: null,
-        video: "Videos/leadweb1.mp4",
-        brief: "Complete redesign of LEAD College's official website — a modern, responsive platform serving students, faculty, and the public.",
-        detailedBrief: "Led the end-to-end redesign and development of the official LEAD College (Autonomous), Palakkad website. The project involved rebuilding the entire digital presence of the institution with a modern, mobile-first interface using WordPress, PHP, and Elementor. Key deliverables included improved navigation, structured academic content, faculty portals, event highlights, and SEO optimization — resulting in a significantly enhanced user experience for thousands of visitors.",
-        team: ["Vishnu K (Fullstack Developer & UI/UX Designer)", "Nikhil AP (Fullstack Developer)", "Abhinand Vishwam (Fullstack Developer)", "Fathima Shan (Frontend & Content Writer)", "Gopika (Frontend & Content Writer)"],
-        techStack: ["WordPress", "PHP", "Elementor", "HTML5", "CSS3"],
-        demoUrl: "https://www.lead.ac.in",
-        githubUrl: null
+        video: "Videos/leadconnect-video.mp4",
+        brief: "An online stranger videocall platform to connect LEAD students with each other.",
+        detailedBrief: "LEAD Connect is an online stranger videocall platform designed to connect LEAD students with each other. Students can sign in seamlessly with their LEAD mail to connect, make new friends among strangers, and effectively destroy the barriers between departments.",
+        team: ["Vishnu K"],
+        techStack: ["HTML", "CSS", "JavaScript", "Firebase", "WebRTC"],
+        demoUrl: "https://campusconnect-frontend-beta.vercel.app/",
+        githubUrl: "https://github.com/vishnucax/leadconnect",
+        isWIP: false
     },
     2: {
         name: "Smart Ecom",
@@ -50,15 +51,19 @@ const sampleProjects = [
     },
     {
         id: 5,
-        name: "ST Thomas College Konni",
+        name: "Lead College Website",
         image: null,
-        video: "Videos/lead-stc.mp4",
-        brief: "Official website for ST Thomas College, Konni — a feature-rich institutional platform built with PHP, HTML5, and CSS3.",
-        detailedBrief: "Designed and developed the full institutional website for ST Thomas College, Konni, establishing a robust digital presence for the college. The platform facilitates seamless communication between students, faculty, and the general public, featuring structured course pages, news & events, faculty directories, and administrative information.",
-        team: ["Vishnu K (Fullstack Developer)", "Arjun KP (Faculty, Lead College)"],
-        techStack: ["PHP", "HTML5", "CSS3", "JavaScript"],
-        demoUrl: "https://www.stthomascollegekonni.com/",
-        githubUrl: null
+        video: "Videos/leadweb1.mp4",
+        brief: "Complete redesign of LEAD College's official website — a modern, responsive platform serving students, faculty, and the public.",
+        detailedBrief: "Led the end-to-end redesign and development of the official LEAD College (Autonomous), Palakkad website. The project involved rebuilding the entire digital presence of the institution with a modern, mobile-first interface using WordPress, PHP, and Elementor. Key deliverables included improved navigation, structured academic content, faculty portals, event highlights, and SEO optimization — resulting in a significantly enhanced user experience for thousands of visitors.",
+        team: ["Vishnu K (Fullstack Developer & UI/UX Designer)", "Nikhil AP (Fullstack Developer)", "Abhinand Vishwam (Fullstack Developer)", "Fathima Shan (Frontend & Content Writer)", "Gopika (Frontend & Content Writer)"],
+        techStack: ["WordPress", "PHP", "Elementor", "HTML5", "CSS3"],
+        demoUrl: "https://www.lead.ac.in",
+        githubUrl: null,
+        githubPopup: {
+            message: "The LEAD college official website is deployed in WordPress. Due to security issues, the GitHub repo is not available.",
+            websiteUrl: "https://www.lead.ac.in"
+        }
     },
     {
         id: 6,
@@ -78,16 +83,19 @@ const sampleProjects = [
 const moreProjects = [
     {
         id: 7,
-        name: "LEAD Connect",
-        image: "https://opengraph.githubassets.com/1/vishnucax/leadconnect",
-        video: null,
-        brief: "An online stranger videocall platform to connect LEAD students with each other.",
-        detailedBrief: "LEAD Connect is an online stranger videocall platform designed to connect LEAD students with each other. Students can sign in seamlessly with their LEAD mail to connect, make new friends among strangers, and effectively destroy the barriers between departments.",
-        team: ["Vishnu K"],
-        techStack: ["HTML", "CSS", "JavaScript", "Firebase", "WebRTC"],
-        demoUrl: "https://vishnucax.github.io/leadconnect/",
-        githubUrl: "https://github.com/vishnucax/leadconnect",
-        isWIP: true
+        name: "ST Thomas College Konni",
+        image: null,
+        video: "Videos/lead-stc.mp4",
+        brief: "Official website for ST Thomas College, Konni — a feature-rich institutional platform built with PHP, HTML5, and CSS3.",
+        detailedBrief: "Designed and developed the full institutional website for ST Thomas College, Konni, establishing a robust digital presence for the college. The platform facilitates seamless communication between students, faculty, and the general public, featuring structured course pages, news & events, faculty directories, and administrative information.",
+        team: ["Vishnu K (Fullstack Developer)", "Arjun KP (Faculty, Lead College)"],
+        techStack: ["PHP", "HTML5", "CSS3", "JavaScript"],
+        demoUrl: "https://www.stthomascollegekonni.com/",
+        githubUrl: null,
+        githubPopup: {
+            message: "Due to security issues, St Thomas College Konni's GitHub repo is not available.",
+            websiteUrl: "https://www.stthomascollegekonni.com/"
+        }
     },
     {
         id: 8,
@@ -796,7 +804,9 @@ function showProjectDetails(projectId) {
                 </a>
                 ${project.githubUrl ? `<a href="${project.githubUrl}" class="popup-project-btn github" target="_blank">
                     <i class="fab fa-github"></i> View Source Code
-                </a>` : ''}
+                </a>` : (project.githubPopup ? `<a href="#" class="popup-project-btn github" onclick="handleGithubClick(event, '${project.githubPopup.websiteUrl}', '${project.githubPopup.message.replace(/'/g, "\\'")}')">
+                    <i class="fab fa-github"></i> View Source Code
+                </a>` : '')}
             </div>
         </div>
     `;
@@ -888,6 +898,7 @@ document.addEventListener('keydown', function (e) {
         closeAchievementDetails();
         closeWipPopup();
         closeResumePopup();
+        closeGithubPopup();
     }
 });
 
@@ -938,7 +949,9 @@ function addProjectCard(project) {
                 </a>
                 ${project.githubUrl ? `<a href="${project.githubUrl}" class="project-btn github" target="_blank">
                     <i class="fab fa-github"></i> GitHub
-                </a>` : ''}
+                </a>` : (project.githubPopup ? `<a href="#" class="project-btn github" onclick="handleGithubClick(event, '${project.githubPopup.websiteUrl}', '${project.githubPopup.message.replace(/'/g, "\\'")}')">
+                    <i class="fab fa-github"></i> GitHub
+                </a>` : '')}
                 <button class="project-btn details" onclick="showProjectDetails(${project.id})">
                     <i class="fas fa-info-circle"></i> Details
                 </button>
@@ -948,6 +961,34 @@ function addProjectCard(project) {
 
     projectsGrid.appendChild(projectCard);
 }
+
+// Handle GitHub popup
+function handleGithubClick(event, websiteUrl, message) {
+    event.preventDefault();
+    const messageEl = document.getElementById('githubPopupMessage');
+    const btnEl = document.getElementById('githubVisitWebsiteBtn');
+    if(messageEl) messageEl.innerText = message;
+    if(btnEl) btnEl.href = websiteUrl;
+    const popup = document.getElementById('githubPopup');
+    if(popup) popup.classList.add('active');
+}
+
+function closeGithubPopup() {
+    const popup = document.getElementById('githubPopup');
+    if (popup) popup.classList.remove('active');
+}
+
+// Close github popup when clicking outside
+document.addEventListener('DOMContentLoaded', () => {
+    const githubPopup = document.getElementById('githubPopup');
+    if (githubPopup) {
+        githubPopup.addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeGithubPopup();
+            }
+        });
+    }
+});
 
 // Load more projects function
 function loadMoreProjects() {
@@ -1734,34 +1775,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-});
-
-/* Scroll Spy Functionality */
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
-    };
-
-    const observerCallback = (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#'+id) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    sections.forEach(section => observer.observe(section));
 });
