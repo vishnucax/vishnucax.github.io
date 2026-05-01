@@ -1776,3 +1776,118 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/* ========================================
+   Experience Modal Functions
+   ======================================== */
+function openExperienceModal() {
+    const modal = document.getElementById('experienceModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeExperienceModal() {
+    const modal = document.getElementById('experienceModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close experience modal when clicking outside
+document.addEventListener('DOMContentLoaded', () => {
+    const experienceModal = document.getElementById('experienceModal');
+    if (experienceModal) {
+        experienceModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeExperienceModal();
+            }
+        });
+    }
+});
+
+
+/* ========================================
+   Resume Popup Functions
+   ======================================== */
+function openResumePopup() {
+    const popup = document.getElementById('resumePopup');
+    if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeResumePopup() {
+    const popup = document.getElementById('resumePopup');
+    if (popup) {
+        popup.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close resume popup when clicking outside
+document.addEventListener('DOMContentLoaded', () => {
+    const resumePopup = document.getElementById('resumePopup');
+    if (resumePopup) {
+        resumePopup.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeResumePopup();
+            }
+        });
+    }
+});
+
+// Close modals on Escape key press
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const activeModals = document.querySelectorAll('.experience-modal-overlay.active, .certificate-modal.active, .lightbox.active, .popup-overlay.active, .project-details-popup.active, .achievement-details-popup.active, .resume-popup-overlay.active');
+        if (activeModals.length > 0) {
+            activeModals.forEach(modal => {
+                if (modal.id === 'experienceModal') closeExperienceModal();
+                else if (modal.id === 'certificateModal') {
+                    if (typeof closeCertificateModal === 'function') closeCertificateModal();
+                    else modal.classList.remove('active');
+                }
+                else if (modal.id === 'lightbox') {
+                    if (typeof closeLightbox === 'function') closeLightbox();
+                    else modal.classList.remove('active');
+                }
+                else if (modal.id === 'achievementDetailsPopup') {
+                    if (typeof closeAchievementDetails === 'function') closeAchievementDetails();
+                    else modal.classList.remove('active');
+                }
+                else if (modal.id === 'projectDetailsPopup') {
+                    if (typeof closeProjectDetails === 'function') closeProjectDetails();
+                    else modal.classList.remove('active');
+                }
+                else if (modal.id === 'resumePopup') closeResumePopup();
+                else {
+                    modal.classList.remove('active');
+                }
+            });
+            document.body.style.overflow = 'auto';
+        }
+    }
+});
+
+// Experience Card Fade-up Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    const experienceCard = document.querySelector('.experience-card');
+    if (experienceCard) {
+        observer.observe(experienceCard);
+    }
+});

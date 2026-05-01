@@ -28,6 +28,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#achievements">Achievements</a></li>
@@ -57,6 +58,7 @@
                 <li><a href="#home" class="menu-item">Home</a></li>
                 <li><a href="#about" class="menu-item">About</a></li>
                 <li><a href="#skills" class="menu-item">Skills</a></li>
+                <li><a href="#experience" class="menu-item">Experience</a></li>
                 <li><a href="#education" class="menu-item">Education</a></li>
                 <li><a href="#projects" class="menu-item">Projects</a></li>
                 <li><a href="#achievements" class="menu-item">Achievements</a></li>
@@ -88,7 +90,7 @@
 
         <section class="hero" id="home">
             <div class="hero-image">
-                <img src="https://i.ibb.co/27xCxzFj/vishai.png" alt="Vishnu K">
+                <img src="./Images/vishai.png" alt="Vishnu K">
             </div>
             <div class="hero-content">
                 <h1>Hi, I'm <span>Vishnu K</span></h1>
@@ -154,6 +156,29 @@
             <div class="tech-scroll-container">
                 <div class="tech-scroll" id="techScroll">
                     <!-- Tech cards will be added here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience" id="experience">
+            <h2>Experience</h2>
+            <div class="experience-container">
+                <div class="experience-card centered-compact-card">
+                    <div class="experience-logo-center">
+                        <img src="./Images/luminar-logo.jpeg" alt="Luminar Technolab" onerror="this.src='https://www.luminartechnolab.com/wp-content/uploads/2020/03/Logo-Luminar.png'" loading="lazy">
+                    </div>
+                    <div class="experience-title-center">
+                        <h3>Python Fullstack Developer (Intern)</h3>
+                        <div class="experience-company">Luminar Technolab, Kochi</div>
+                        <div class="experience-duration">Jan 2025 – Apr 2025</div>
+                    </div>
+                    
+                    <div class="experience-footer-center">
+                        <button class="btn btn-primary glow-btn" onclick="openExperienceModal()">
+                            <i class="fas fa-info-circle"></i> View Details
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -615,6 +640,7 @@
                             <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
                             <li><a href="#about"><i class="fas fa-chevron-right"></i> About Me</a></li>
                             <li><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+                            <li><a href="#experience"><i class="fas fa-chevron-right"></i> Experience</a></li>
                             <li><a href="#education"><i class="fas fa-chevron-right"></i> Education</a></li>
                             <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
                             <li><a href="#achievements"><i class="fas fa-chevron-right"></i> Achievements</a></li>
@@ -756,6 +782,64 @@
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 
+    <!-- NEW: Experience Modal -->
+    <div class="experience-modal-overlay" id="experienceModal">
+        <div class="experience-modal-content">
+            <button class="experience-modal-close" onclick="closeExperienceModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="experience-modal-header">
+                <h3>Internship Details</h3>
+                <p>Python Fullstack Developer at Luminar Technolab</p>
+            </div>
+            <div class="experience-modal-body detailed-modal-body">
+                <div class="modal-info-column">
+                    <h4>Internship Summary</h4>
+                    <ul class="experience-description">
+                        <li>Worked on <strong>3 real-world development projects</strong></li>
+                        <li>Contributed to backend and fullstack application development</li>
+                        <li>Built and improved REST API-based applications</li>
+                        <li>Collaborated on debugging, feature implementation, and UI integration</li>
+                        <li>Developed the degree project <a href="#projects" class="experience-link" onclick="closeExperienceModal()">FixItNow</a></li>
+                    </ul>
+
+                    <div class="experience-skills-container modal-skills">
+                        <div class="skills-group">
+                            <h4>Technical Skills</h4>
+                            <div class="skills-badges">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">Django</span>
+                                <span class="skill-badge">Flask</span>
+                                <span class="skill-badge">REST API</span>
+                                <span class="skill-badge">Git</span>
+                                <span class="skill-badge">HTML</span>
+                                <span class="skill-badge">CSS</span>
+                                <span class="skill-badge">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Soft Skills</h4>
+                            <div class="skills-badges">
+                                <span class="skill-badge soft-skill">Team Collaboration</span>
+                                <span class="skill-badge soft-skill">Problem Solving</span>
+                                <span class="skill-badge soft-skill">Communication</span>
+                                <span class="skill-badge soft-skill">Adaptability</span>
+                                <span class="skill-badge soft-skill">Time Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-cert-column">
+                    <h4>Certificate of Completion</h4>
+                    <div class="cert-image-wrapper">
+                        <img src="./Images/Certs/luminar.jpeg" alt="Luminar Internship Certificate" class="experience-cert-img" loading="lazy" onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Resume Download Popup -->
     <div class="resume-popup-overlay" id="resumePopup">
         <div class="resume-popup-modal">
@@ -780,7 +864,7 @@
                     </div>
                     <i class="fas fa-download resume-item-download"></i>
                 </a>
-                <a class="resume-item" href="Resumes/Vishnu K AI Engineer Resume.pdf" target="_blank" download="Vishnu_K_AI_Engineer_Resume.pdf">
+                <a class="resume-item" href="Resumes/Vishnu%20K%20AI%20Engineer%20Resume.pdf" target="_blank" download="Vishnu_K_AI_Engineer_Resume.pdf">
                     <div class="resume-item-icon">
                         <i class="fas fa-robot"></i>
                     </div>
