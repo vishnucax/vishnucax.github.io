@@ -743,6 +743,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ScrollSpy functionality for navigation links
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu .menu-item');
+    
+    function updateActiveLink() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href && href === '#' + current && current !== '') {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+});
+
 // Show project details in popup
 function showProjectDetails(projectId) {
     const project = projectsData[projectId];

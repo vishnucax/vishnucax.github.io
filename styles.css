@@ -210,7 +210,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.2rem;
     align-items: center;
 }
 
@@ -218,6 +218,7 @@ body {
     text-decoration: none;
     color: var(--black);
     font-weight: 500;
+    font-size: 0.95rem;
     padding: 0.5rem 0;
     position: relative;
     transition: var(--transition);
@@ -238,8 +239,17 @@ body {
     transition: var(--transition);
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--orange);
+}
+
+.dark-mode .nav-links a.active {
+    color: var(--orange);
 }
 
 .nav-controls {
@@ -1197,78 +1207,134 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Centered Compact Experience Card Styles */
-.centered-compact-card {
-    max-width: 480px;
+/* Horizontal Experience Card Styles */
+.horizontal-card {
+    max-width: 850px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 3rem 2rem;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 3rem !important;
 }
 
-.experience-logo-center {
-    width: 90px;
-    height: 90px;
-    background: white;
-    border-radius: 50%;
-    padding: 12px;
+.card-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(0, 0, 0, 0.03);
+    z-index: 0;
+    pointer-events: none;
+    letter-spacing: 12px;
+    white-space: nowrap;
+}
+
+.dark-mode .card-bg-text {
+    color: rgba(255, 255, 255, 0.03);
+}
+
+.card-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-left {
+    flex-shrink: 0;
+}
+
+.experience-logo-box {
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: transform 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.centered-compact-card:hover .experience-logo-center {
+.dark-mode .experience-logo-box {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.experience-card:hover .experience-logo-box {
     transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(253, 126, 20, 0.2);
 }
 
-.experience-logo-center img {
+.experience-logo-box img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    border-radius: 12px;
 }
 
-.experience-title-center h3 {
-    font-size: 1.5rem;
+.card-right {
+    flex-grow: 1;
+}
+
+.role-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.role-wrapper h3 {
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--black);
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 0.5rem;
+    margin: 0;
     transition: var(--transition);
 }
 
-.experience-title-center .experience-company {
-    font-size: 1.1rem;
-    font-weight: 600;
+.role-badge {
+    background: rgba(253, 126, 20, 0.15);
     color: var(--orange);
-    margin-bottom: 0.4rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(253, 126, 20, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.experience-title-center .experience-duration {
-    font-size: 0.95rem;
+.experience-company {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.experience-duration {
+    font-size: 1rem;
     color: #666;
     font-weight: 500;
     margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
-.dark-mode .experience-title-center .experience-duration {
+.dark-mode .experience-duration {
     color: #aaa;
 }
 
-.experience-footer-center {
-    width: 100%;
+.experience-footer-horizontal {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .glow-btn {
@@ -1295,10 +1361,62 @@ body {
     left: 100%;
 }
 
+@media (max-width: 992px) {
+    .horizontal-card {
+        padding: 2.5rem !important;
+    }
+    .card-content-wrapper {
+        gap: 2.5rem;
+    }
+    
+    .role-wrapper h3 {
+        font-size: 1.5rem;
+    }
+    .card-bg-text {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .horizontal-card {
+        padding: 2.5rem 1.5rem !important;
+    }
+
+    .card-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .card-bg-text {
+        font-size: 5rem;
+    }
+
+    .role-wrapper {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .experience-company, .experience-duration {
+        justify-content: center;
+    }
+
+    .experience-footer-horizontal {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 576px) {
-    .centered-compact-card {
-        padding: 2.5rem 1.5rem;
-        max-width: 100%;
+    .card-bg-text {
+        font-size: 3.5rem;
+    }
+    .role-wrapper h3 {
+        font-size: 1.3rem;
+    }
+    .experience-logo-box {
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -5430,8 +5548,17 @@ body {
     transition: var(--transition);
 }
 
-.mobile-menu .menu-item:hover::after {
+.mobile-menu .menu-item:hover::after,
+.mobile-menu .menu-item.active::after {
     width: calc(100% - 3rem);
+}
+
+.mobile-menu .menu-item.active {
+    color: var(--orange);
+}
+
+.dark-mode .mobile-menu .menu-item.active {
+    color: var(--orange);
 }
 
 /* UPDATED: Enhanced Social Media Section - Small Perfect Round Buttons */
