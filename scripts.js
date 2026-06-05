@@ -933,13 +933,19 @@ document.addEventListener('keydown', function (e) {
 
 // Resume popup functions
 function openResumePopup() {
-    document.getElementById('resumePopup').classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const popup = document.getElementById('resumePopup');
+    if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closeResumePopup() {
-    document.getElementById('resumePopup').classList.remove('active');
-    document.body.style.overflow = 'auto';
+    const popup = document.getElementById('resumePopup');
+    if (popup) {
+        popup.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 }
 
 // Close resume popup when clicking outside
